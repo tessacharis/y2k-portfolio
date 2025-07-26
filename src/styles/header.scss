@@ -32,6 +32,9 @@ header {
   border-bottom: 1px solid $purple;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
   z-index: 999;
+  @media screen and (max-width: 768px) {
+    padding: 0px 5px;
+  }
 }
 
 .logo-link {
