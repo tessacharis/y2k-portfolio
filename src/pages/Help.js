@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { DndContext, useDraggable } from "@dnd-kit/core";
 import { Draggable } from "../components/Draggable";
 import { Droppable } from "../components/Droppable";

@@ -1,4 +1,3 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
 import { useDraggable } from "@dnd-kit/core";
 import { isMobile } from 'react-device-detect';
 import "../styles/draggable.scss";
@@ -9,29 +8,6 @@ export function Draggable({ id, content, title, isOpen, styles, children }) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id,
   });
-
-//   const [isDragging, setIsDragging] = useState(false);
-//   const [isModalOpen, setIsModalOpen] = useState(isOpen);
-
-//   const eventControl = (event) => {
-//    if (event.type === "mousemove" || event.type === "touchmove") {
-//      setIsDragging(true);
-//    }
-
-//    if (event.type === "mouseup" || event.type === "touchend") {
-//      setTimeout(() => {
-//        setIsDragging(false);
-//      }, 100);
-//    }
-//  };
- 
-//   function closeModal(e) {
-//     console.log("button click event");
-//     e.preventDefault();
-//     setIsModalOpen(!isModalOpen);
-
-//     console.log(isModalOpen);
-//   }() => !isDragging && closeModal()
 
 console.log(isMobile)
 

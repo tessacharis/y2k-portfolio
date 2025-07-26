@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { DndContext, useDraggable } from "@dnd-kit/core";
+import {  useState } from "react";
+import { DndContext } from "@dnd-kit/core";
 import { Draggable } from "../components/Draggable";
 import { Droppable } from "../components/Droppable";
-import headshot from "../assets/tessa-newbacher-headshot.jpg";
 
 import "../styles/home.scss";
 import pageData from "../content/home.json";
-
-const idk = {
-  "x": 50,
-  "y": 200
-}
 
 const Home = () => {
   const [pages, setPages] = useState(pageData);

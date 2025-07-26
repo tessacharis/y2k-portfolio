@@ -7,7 +7,7 @@ export function Droppable({ children }) {
   });
 
   return (
-    <div ref={setNodeRef} class="dropzone">
+    <div ref={setNodeRef} className={isOver ? "dropzone" : "dropzone" }>
       {children}
     </div>
   );

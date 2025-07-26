@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/work.scss";
 import MentorcliQ1 from "../assets/mentorcliq-design-system.webp";
@@ -88,7 +87,7 @@ const MentorcliQ = () => {
           <h2>Design System</h2>
           <img
             src={MentorcliQ1}
-            alt="An Image containing various UI elements and components, branding guidelines, color pallette and icon examples for the MentorcliQ Design System"
+            alt="Various UI elements and components, branding guidelines, color pallette and icon examples for the MentorcliQ Design System"
           />
           <p>
             Using a combination of design software (Adobe, Figma, Framer) and
