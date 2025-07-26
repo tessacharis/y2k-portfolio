@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { CursorifyProvider } from "@cursorify/react";
 import CustomCursor from "./components/CustomCursor.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";

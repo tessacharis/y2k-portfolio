@@ -1,13 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.svg";
-import logo2 from "../assets/logo-pixellated.png"
 import { Marquee } from "../components/Marquee.js";
 import "../styles/header.scss";
 import "../styles/navigation.scss";
 
 const Layout = () => {
-
   // Zoom in and Out
   const [scale, setScale] = useState(1);
 
@@ -18,18 +16,6 @@ const Layout = () => {
   const zoomOut = () => {
     if (scale > 0.1) {
       setScale(scale - 0.1);
-    }
-  };
-
-  // Enter/Esc Full Screen
-  const [fullScreen, setFullScreen] = useState(false);
-  const handleFullScreen = () => {
-    setFullScreen(!fullScreen);
-    console.log(fullScreen)
-    if (fullScreen) {
-      Element.requestFullscreen();
-    } else {
-      document.exitFullscreen();
     }
   };
 
@@ -76,10 +62,10 @@ const Layout = () => {
               alt="Tessa Newbacher: UI/UX Designer"
             />
           </Link>
-          <button class="mobile-menu" onClick={() =>  setShowMenu(!showMenu)}>
+          <button class="mobile-menu" onClick={() => setShowMenu(!showMenu)}>
             Menu
           </button>
-          <ul className={`menu__items ${showMenu ? 'menu__items--open' : ''}`}>
+          <ul className={`menu__items ${showMenu ? "menu__items--open" : ""}`}>
             <li class="dropdown">
               {/* <!-- aria-expanded needs managed with Javascript --> */}
               <button
@@ -109,21 +95,12 @@ const Layout = () => {
               </button>
               <ul className="dropdown__menu" id="edit-dropdown">
                 <li>
-                  <a onClick={goBack}>Undo</a>
+                  <button onClick={goBack}>Undo</button>
                 </li>
                 <li>
-                  <a onClick={goForward}>Redo</a>
+                  <button onClick={goForward}>Redo</button>
                 </li>
                 <hr />
-                <li>
-                  <a href="#">Copy</a>
-                </li>
-                <li>
-                  <a href="#">Cut</a>
-                </li>
-                <li>
-                  <a href="#">Paste</a>
-                </li>
                 <li>
                   <Link to="delete">Delete</Link>
                 </li>
@@ -143,16 +120,10 @@ const Layout = () => {
                   <button onClick={handleRefresh}>Refresh</button>
                 </li>
                 <li>
-                  <button
-                    onClick={zoomIn}>
-                    Zoom In
-                  </button>
+                  <button onClick={zoomIn}>Zoom In</button>
                 </li>
                 <li>
-                  <button
-                    onClick={zoomOut}>
-                    Zoom Out
-                  </button>
+                  <button onClick={zoomOut}>Zoom Out</button>
                 </li>
               </ul>
             </li>
@@ -169,17 +140,24 @@ const Layout = () => {
                 <li>
                   <a
                     href="https://www.linkedin.com/in/tessanewbacher/"
-                    target="_blank">
+                    target="_blank"
+                    rel="noreferrer">
                     LinkedIn
                   </a>
                 </li>
                 <li>
-                  <a href="https://github.com/tessacharis" target="_blank">
+                  <a
+                    href="https://github.com/tessacharis"
+                    target="_blank"
+                    rel="noreferrer">
                     Github
                   </a>
                 </li>
                 <li>
-                  <a href="https://dribbble.com/tessacharis" target="_blank">
+                  <a
+                    href="https://dribbble.com/tessacharis"
+                    target="_blank"
+                    rel="noreferrer">
                     Dribbble
                   </a>
                 </li>
@@ -189,7 +167,8 @@ const Layout = () => {
                 <li>
                   <a
                     href="https://docs.google.com/document/d/1_RfKnm8lrnD8b5Lv_TLUTQVdnuNulmeh0BOTKuHygxo/edit?tab=t.0"
-                    target="_blank">
+                    target="_blank"
+                    rel="noreferrer">
                     Resume
                   </a>
                 </li>
