@@ -1,45 +1,27 @@
-import { useState } from "react";
-import { DndContext, useDraggable } from "@dnd-kit/core";
-import { Draggable } from "../components/Draggable";
-import { Droppable } from "../components/Droppable";
-import "../styles/home.scss";
-import pageData from "../content/home.json";
+import { Widget, PopupButton } from '@typeform/embed-react'
 
-const Home = () => {
-  const [pages, setPages] = useState(pageData);
-
-  function handleDragEnd(ev) {
-    const page = pages.find((x) => x.id === ev.active.id);
-    page.position.x += ev.delta.x;
-    page.position.y += ev.delta.y;
-    const _pages = pages.map((x) => {
-      if (x.id === page.id) return page;
-      return x;
-    });
-    setPages(_pages);
-  }
-
+const Help = () => {
   return (
-      <DndContext onDragEnd={handleDragEnd}>
-        <Droppable>
-          {pages &&
-            pages.map((page) => (
-              <Draggable
-                styles={{
-                  position: "absolute",
-                  left: `${page.position.x}px`,
-                  top: `${page.position.y}px`,
-                }}
-                isOpen={page.visible}
-                key={page.id}
-                id={page.id}
-                content={page.content}
-                title={page.title}
-              />
-            ))}
-        </Droppable>
-      </DndContext>
+    <section className="portfolio-item" aria-labelledby="help-heading">
+      <div className="window-content">
+        <div className="window-content-container">
+          <h2 id="help-heading">
+            Are you looking for an extra hand?
+          </h2>
+          <p>
+            Are you looking for an extra hand on a website or web app project?
+            Please let me know how I can assist you in your next UI/UX design or
+            front-end project.
+          </p>
+          <div data-tf-live="01K13R1B4DTFZ1EN6APS3QZQC0"></div><script src="//embed.typeform.com/next/embed.js"></script>
+          <Widget id="01K13QJRF8QSJ2YRTQQZQV8ZYP" style={{ width: '100%', height: '500px' }} />
+          <PopupButton id="01K13QJRF8QSJ2YRTQQZQV8ZYP" style={{ fontSize: 20 }} className="my-button">
+      click to open form in popup
+    </PopupButton>
+        </div>
+      </div>
+    </section>
   );
-}
+};
 
-export default Home;
+export default Help;

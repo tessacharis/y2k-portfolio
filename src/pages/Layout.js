@@ -55,7 +55,7 @@ const Layout = () => {
           <a className="visually-hidden" href="#main">
             Skip to content
           </a>
-          <Link to="/" class="logo-link">
+          <Link to="/" class="logo-link" onClick={() => setShowMenu(!showMenu)}>
             <img
               src={logo}
               class="logo"
@@ -77,10 +77,10 @@ const Layout = () => {
               </button>
               <ul className="dropdown__menu" id="file-dropdown">
                 <li>
-                  <Link to="/about">About</Link>
+                  <Link to="/about" onClick={() => setShowMenu(!showMenu)}>About</Link>
                 </li>
                 <li>
-                  <Link to="/work">Work</Link>
+                  <Link to="/work" onClick={() => setShowMenu(!showMenu)}>Work</Link>
                 </li>
               </ul>
             </li>
@@ -175,7 +175,7 @@ const Layout = () => {
               </ul>
             </li>
             <li className="dropdown">
-              <a href="/help">Help</a>
+              <a href="/help" onClick={() => setShowMenu(!showMenu)}>Help</a>
             </li>
           </ul>
         </nav>
