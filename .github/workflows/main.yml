@@ -6,6 +6,8 @@ name: 🚀 Deploy website on push
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest # Or a self-hosted runner if deploying to a private network
+    env:
+      CI: false # Sets CI to false for all steps in this job
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
