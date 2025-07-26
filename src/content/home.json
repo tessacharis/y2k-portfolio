@@ -1,0 +1,21 @@
+[
+  {
+    "id": "intro",
+    "visible": true,
+    "title": "Welcome to my website!",
+    "content": "<p>Taking inspiration from some of the first websites I experienced in the late 90s and early aughts, this project evokes Y2K-era computer and internet browsing nostalgia. Feel free to explore <a href='/work'>my professional work</a>, <a href='/about'>bio</a> or click around and discover a few easter eggs I've left for you to enjoy!</p><p>Dark mode coming soon :)</p><p>ps. If you accidentally close out of one of these windows, just refresh the page.</p><p>pps: This website works best on large monitor screen displays at 1440px wide.</p>",
+    "position": {
+      "x": 100,
+      "y": 200
+    }
+  },
+  {
+    "id": "logo",
+    "visible": true,
+    "content": "<p><img className'headshot' src='static/media/logo-pixellated.4dd9cfdcfa8fc29f194c.png' /></p>",
+    "position": {
+      "x": 1200,
+      "y": 200
+    }
+  }
+]

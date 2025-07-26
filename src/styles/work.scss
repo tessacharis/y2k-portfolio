@@ -1,0 +1,140 @@
+@import "./colors.scss";
+
+section {
+  margin: 0 auto;
+  max-width: 1800px;
+}
+
+.heading-container {
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.portfolio-item-image {
+  max-height: 200px;
+  width: fit-content;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: center;
+  gap: 40px;
+}
+
+.portfolio-item {
+  margin-top: -100px;
+}
+
+#portfolio-heading {
+  margin: 0px;
+  font-size: 55px;
+  color: $electric-indigo;
+  @media screen and (max-width: 768px) {
+    font-size: 30px;
+  }
+}
+
+.portfolio-heading-container {
+  position: relative;
+  background-color: #e1e1e1;
+  text-align: center;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+}
+
+.badge {
+  background-color: $neon-green;
+  color: $electric-indigo;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  padding: 4px;
+  border-radius: 4px;
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  text-transform: uppercase;
+  transform: rotateZ(6deg);
+}
+
+.window-content.window-content__static {
+  max-width: 425px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 10px;
+  align-self: stretch;
+  justify-content: space-between;
+
+  // &:nth-child(1) {
+  //   transform: translateY(-200px) translateX(-50px);
+  // }
+  // &:nth-child(2) {
+  //   transform: translateY(25px) translateX(0px);
+  // }
+  // &:nth-child(3) {
+  //   transform: translateY(-75px) translateX(50px);
+  // }
+}
+
+img {
+  margin-bottom: 10px;
+  transition: 0.5s ease-in-out;
+  transform-origin: top right;
+  animation: float 6s ease-in-out infinite;
+}
+
+h1 {
+  font-size: 5em;
+  text-transform: uppercase;
+  font-style: italic;
+  font-family: Orbitron;
+  mix-blend-mode: hard-light;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.mq-small-image {
+  max-width: 400px;
+  float: left;
+  padding-right: 20px;
+  border-radius: 5px;
+}
+
+h2 {
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: 100;
+  // font-style: italic;
+  font-family: Orbitron;
+}
+
+hr {
+  margin: 10px 0;
+}
+
+img {
+  width: 100%;
+}
+
+.details {
+  background-color: $purple;
+  color: $white;
+  border: 10px solid $neon-green;
+  width: auto;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+  width: 100%;
+  &:hover {
+    background-color: $purple-dark;
+    border-color: $pink;
+    transform: translateY(3px) translateX(3px);
+  }
+}
