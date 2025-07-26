@@ -8,14 +8,5 @@
       "x": 100,
       "y": 200
     }
-  },
-  {
-    "id": "logo",
-    "visible": true,
-    "content": "<p><img className'headshot' src='static/media/logo-pixellated.4dd9cfdcfa8fc29f194c.png' /></p>",
-    "position": {
-      "x": 1200,
-      "y": 200
-    }
   }
 ]
