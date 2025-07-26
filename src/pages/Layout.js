@@ -93,7 +93,7 @@ const Layout = () => {
                 aria-controls="edit-dropdown">
                 Edit
               </button>
-              <ul className="dropdown__menu" id="edit-dropdown">
+              <ul className="dropdown__menu mobile__hidden" id="edit-dropdown">
                 <li>
                   <button onClick={goBack}>Undo</button>
                 </li>
@@ -115,7 +115,7 @@ const Layout = () => {
                 aria-controls="view-dropdown">
                 View
               </button>
-              <ul className="dropdown__menu" id="view-dropdown">
+              <ul className="dropdown__menu  mobile__hidden" id="view-dropdown">
                 <li>
                   <button onClick={handleRefresh}>Refresh</button>
                 </li>

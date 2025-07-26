@@ -154,11 +154,27 @@ hr {
     &.menu__items--open {
       position: absolute;
       display: flex;
+      .dropdown {
+        width: 100%;
+        text-align: center;
+      }
+      .dropdown__title {
+        display: none;
+      }
       .dropdown__menu {
         opacity: 1;
         visibility: visible;
         position: relative;
-        margin-left: 20px;
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        background: none; 
+
+        &.mobile__hidden {
+          display: none;
+        }
 
         a,
         button {
