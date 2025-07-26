@@ -27,5 +27,5 @@ jobs:
           server: tessanewbacher.com
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
-          server-dir: /public_html/
-          source: "build/" # Or the path to your built artifacts (e.g., dist/, public/)
+          local-dir: ./build/ # Or your React build output directory (e.g., ./dist/)
+          remote-dir: public_html/ # The target directory on cPanel
