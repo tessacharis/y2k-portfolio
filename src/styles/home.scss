@@ -7,3 +7,12 @@
         width: 100px;
     }
 }
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}

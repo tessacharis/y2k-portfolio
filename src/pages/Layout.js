@@ -187,7 +187,7 @@ const Layout = () => {
       <main className="main" id="main" style={{ fontSize: `${scale}em` }}>
         <Outlet />
       </main>
-      <footer>&copy; Tessa Newbacher 2025</footer>
+      <footer>&copy; Tessa Newbacher 2026</footer>
     </div>
   );
 };

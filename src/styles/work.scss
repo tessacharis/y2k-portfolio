@@ -29,6 +29,12 @@ section {
   margin-top: -100px;
 }
 
+.portfolio-item {
+  & > .window-content {
+    max-width: 1500px;
+  }
+}
+
 #portfolio-heading {
   margin: 0px;
   font-size: 55px;
@@ -99,10 +105,10 @@ h1 {
 }
 
 .mq-small-image {
-  max-width: 400px;
-  float: left;
+  max-height: 400px;
   padding-right: 20px;
   border-radius: 5px;
+  text-align: center;
 }
 
 h2 {
@@ -136,5 +142,55 @@ img {
     background-color: $purple-dark;
     border-color: $pink;
     transform: translateY(3px) translateX(3px);
+  }
+}
+
+.window-content-small {
+  border: 5px solid $purple-dark;
+  justify-self: stretch;
+
+  & > .window-content-header {
+    background-color: $gray;
+    color: $purple-dark;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    border-bottom: 5px solid $purple-dark;
+
+    & > .square {
+      display: block;
+      width: 15px;
+      height: 15px;
+      background-color: $purple;
+      border: 2px solid $pink;
+      border-radius: 5px;
+    }
+  }
+  & > .window-content-small-container {
+    padding: 20px;
+    ul {
+      list-style: none; /* Remove default */
+      list-style-position: outside;
+      list-style-image: url(../assets/sparkle-bullet-point.png);
+      padding-left: 15px;
+      padding-top: 10px;
+      li {
+        margin-bottom: 10px;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+.window-content-grid {
+  display: grid;
+  justify-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  grid-auto-flow: row;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
   }
 }

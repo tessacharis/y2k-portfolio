@@ -14,8 +14,7 @@ const CustomCursor = () => {
       }}>
       {(() => {
         // if (disabled) return <img src={DefaultCursor} />;
-        if (mouseState === "mouseDown") return  <img src={ClickedCursor} />;
-        if (style === "pointer") return  <img src={ClickedCursor} />;
+        if (style === "pointer" || mouseState === "mouseDown"  || mouseState === "drag" || mouseState === "dragging") return  <img src={ClickedCursor} />;
         return <img src={DefaultCursor} alt="Custom Cursor" />;
       })()}
     </div>

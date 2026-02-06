@@ -1,43 +1,59 @@
 import { useState } from "react";
-import { DndContext, useDraggable } from "@dnd-kit/core";
-import { Draggable } from "../components/Draggable";
-import { Droppable } from "../components/Droppable";
 import pageData from "../content/about.json";
+import { DraggableWindow } from "../components/DraggableWindow";
+import headshot from "../assets/tessa-newbacher-headshot.jpg";
 
 const About = () => {
   const [pages, setPages] = useState(pageData);
 
-  function handleDragEnd(ev) {
-    const page = pages.find((x) => x.id === ev.active.id);
-    page.position.x += ev.delta.x;
-    page.position.y += ev.delta.y;
-    const _pages = pages.map((x) => {
-      if (x.id === page.id) return page;
-      return x;
-    });
-    setPages(_pages);
-  }
-
   return (
-    <DndContext onDragEnd={handleDragEnd}>
-      <Droppable>
-        {pages &&
-          pages.map((page) => (
-            <Draggable
-              styles={{
-                position: "absolute",
-                left: `${page.position.x}px`,
-                top: `${page.position.y}px`,
-              }}
-              isOpen={page.visible}
-              key={page.id}
-              id={page.id}
-              content={page.content}
-              title={page.title}
-            />
-          ))}
-      </Droppable>
-    </DndContext>
+    <div className="window-container">
+      {pages &&
+        pages.map((page) => (
+          <DraggableWindow
+            isOpen={page.visible}
+            key={page.id}
+            id={page.id}
+            title={page.title}>
+            <p>
+              <img
+                class="headshot"
+                src={headshot}
+              />
+              Tessa Newbacher is a Senior UI/UX Designer with over
+              10 years of expertise in designing and building websites,
+              software, and mobile applications. Known for her strategic
+              approach to design and her ability to implement robust design
+              systems, Tessa has been instrumental in driving user experience
+              enhancements in high-growth companies. As the first in-house UX
+              Designer at MentorcliQ, she introduced essential design processes
+              and best practices, collaborating with international engineering
+              teams to create impactful user experiences in the mentoring/HR
+              space for corporations worldwide.
+            </p>
+            <p>
+              Before joining MentorcliQ, Tessa made significant contributions at
+              Union Home Mortgage, where she transitioned from a marketing
+              specialist to the company's inaugural front-end developer and UX
+              designer. Her work included creating a design system that
+              accelerated web development projects by 50% and consistently
+              delivering high-quality, brand-aligned websites and software
+              solutions. Tessa's freelance consultancy has further showcased her
+              versatility and dedication, serving a diverse clientele, including
+              Women in Analytics and the DataConnect Conference. With a Bachelor
+              of Arts in Digital Media & Design, Summa Cum Laude, from Baldwin
+              Wallace University, Tessa combines technical acumen with a keen
+              eye for design, continuously pushing the boundaries of user
+              experience and digital innovation.
+            </p>
+            <p>
+              When I'm not working, you can find me doing DIY projects around
+              the house, playing rugby, gardening, or volunteering with LGBTQ+
+              youth.
+            </p>
+          </DraggableWindow>
+        ))}
+    </div>
   );
 };
 
