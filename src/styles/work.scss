@@ -196,27 +196,28 @@ img {
 }
 
 blockquote {
-  background-color: $light-blue; 
+  background-color: $light-blue;
   border: 3px solid $purple-dark;
   border-left: 10px solid $pink; /* Contrasting blue border */
   color: #000;
   padding: 20px;
-  font-family: 'Courier New', Courier, monospace; /* Pixelated font */
-  font-weight: bold;
-  margin: 20px;
+  font-weight: 600;
+  margin: 0px;
+  font-family: "Courier New", Courier, monospace;
   position: relative;
-  font-size: 1,2rem;
   box-shadow: 5px 5px 0px #000; /* Retro shadow effect */
   p {
-  margin: 0;
-  font-size: 1.2rem;
+    margin: 0;
+    font-size: 0.9rem;
+    font-family: "Courier New", Courier, monospace;
   }
   cite {
-  display: block;
-  margin-top: 10px;
-  font-style: normal;
-  color: $purple-dark;
-  text-align: right;
-  font-size: 1.2rem;
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    color: $purple-dark;
+    text-align: right;
+    font-size: 0.9rem;
+    font-family: "Courier New", Courier, monospace;
   }
 }
