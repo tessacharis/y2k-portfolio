@@ -15,7 +15,6 @@ p > a:link {
   }
 }
 
-
 .button {
   background-color: $purple;
   color: $white;
@@ -25,10 +24,19 @@ p > a:link {
   text-align: center;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.2s ease-in-out; 
+  transition: 0.2s ease-in-out;
   &:hover {
-      background-color: $purple-dark;
-      border-color: $pink;
-      transform: translateY(3px) translateX(3px);
+    background-color: $purple-dark;
+    border-color: $pink;
+    transform: translateY(3px) translateX(3px);
   }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }

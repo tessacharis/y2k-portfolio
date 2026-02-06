@@ -194,3 +194,29 @@ img {
     grid-template-columns: 1fr;
   }
 }
+
+blockquote {
+  background-color: $light-blue; 
+  border: 3px solid $purple-dark;
+  border-left: 10px solid $pink; /* Contrasting blue border */
+  color: #000;
+  padding: 20px;
+  font-family: 'Courier New', Courier, monospace; /* Pixelated font */
+  font-weight: bold;
+  margin: 20px;
+  position: relative;
+  font-size: 1,2rem;
+  box-shadow: 5px 5px 0px #000; /* Retro shadow effect */
+  p {
+  margin: 0;
+  font-size: 1.2rem;
+  }
+  cite {
+  display: block;
+  margin-top: 10px;
+  font-style: normal;
+  color: $purple-dark;
+  text-align: right;
+  font-size: 1.2rem;
+  }
+}

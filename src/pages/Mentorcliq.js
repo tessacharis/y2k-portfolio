@@ -30,7 +30,7 @@ const MentorcliQ = () => {
                 <div class="square"></div>
                 <div class="square"></div>
                 <div class="square"></div>
-                <h4>The Company</h4>
+                <h2>The Company</h2>
               </div>
               <div class="window-content-small-container">
                 <p>
@@ -63,7 +63,7 @@ const MentorcliQ = () => {
                 <div class="square"></div>
                 <div class="square"></div>
                 <div class="square"></div>
-                <h4>The Software</h4>
+                <h2>The Software</h2>
               </div>
               <div
                 class="window-content-small-container"
@@ -152,8 +152,8 @@ const MentorcliQ = () => {
                     track
                   </li>
                   <li>
-                    <strong>CliQ AI</strong>: Particantp-facing AI assistant
-                    for in-product guidance and supprot
+                    <strong>CliQ AI</strong>: Particantp-facing AI assistant for
+                    in-product guidance and supprot
                   </li>
                   <li>
                     <strong>Admin AI</strong>: AI Assitant for administrators to
@@ -218,13 +218,9 @@ const MentorcliQ = () => {
               </div>
             </div>
             <h2>Interested in learning more?</h2>
-            <div class="row">
-              <div className="row">
-                <Link to="/help" className="details">
-                  Contact me
-                </Link>
-              </div>
-            </div>
+            <Link to="/help" className="details">
+              Contact me
+            </Link>
           </div>
         </div>
       </div>
