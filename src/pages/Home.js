@@ -18,12 +18,17 @@ const Home = () => {
             id={page.id}
             title={page.title}>
             <p>
-              Taking inspiration from some of the first websites I experienced
-              in the late 90s and early aughts, this project evokes Y2K-era
-              computer and internet browsing nostalgia. Start explore by open
-              the menu and under file, you can find my professional work, bio or
-              click around and discover a few easter eggs I've left for you to
-              enjoy!
+              Inspired by the first websites I ever explored in the late 90s +
+              early aughts, this space is a little love letter to early web
+              nostalgia and creativity.
+            </p>
+            <p>
+              Read my case studies, learn more about me, or reach out if you’re
+              hiring, looking for mentorship/coaching, or just want to say hi.
+            </p>
+            <p>
+              Click around and you might just find a few hidden easter eggs here
+              for curious explorers
             </p>
             <div className="row">
               <Link to="/work" className="details">

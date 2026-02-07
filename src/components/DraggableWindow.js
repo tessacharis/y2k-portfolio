@@ -9,7 +9,7 @@ gsap.registerPlugin(SplitText);
 
 const CustomStyle = {};
 
-export function DraggableWindow({ id, content, title, isOpen, children }) {
+export function DraggableWindow({ id, content, style, title, isOpen, children }) {
   useGSAP(() => {
     if (!isMobile) {
       Draggable.create(".window-content", {
@@ -40,7 +40,7 @@ export function DraggableWindow({ id, content, title, isOpen, children }) {
   console.log(id);
 
   return (
-    <div class={isOpen ? "window-content" : "window-content window-hidden"}>
+    <div style={style} class={isOpen ? "window-content" : "window-content window-hidden"}>
       <div className="window-content-container">
         {title && <h2 class="headline">{title}</h2>}
         <div dangerouslySetInnerHTML={{ __html: content }}></div>

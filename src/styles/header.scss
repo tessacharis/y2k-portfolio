@@ -39,11 +39,14 @@ header {
 
 .logo-link {
   line-height: 1;
-  width: 30px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
-  height: 30px;
+  height: 35px;
   pointer-events: none;
   margin: 0;
   line-height: 1;

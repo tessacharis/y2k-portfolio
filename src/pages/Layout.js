@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Outlet, Link, useNavigate } from "react-router-dom";
+import { DraggableWindow } from "../components/DraggableWindow.js";
 import logo from "../assets/logo.svg";
 import { Marquee } from "../components/Marquee.js";
 import "../styles/header.scss";
