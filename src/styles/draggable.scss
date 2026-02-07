@@ -36,6 +36,8 @@
     flex-direction: column;
     gap: 20px;
     align-items: start;
+    justify-content: space-around;
+
     @media screen and (max-width: 768px) {
       padding: 10px;
     }

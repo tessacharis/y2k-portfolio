@@ -12,7 +12,6 @@ section {
 }
 
 .portfolio-item-image {
-  max-height: 200px;
   width: 100%;
 }
 
@@ -186,6 +185,15 @@ img {
         line-height: 1.5;
       }
     }
+  }
+}
+
+.window-description-container {
+  display: flex;
+  flex-direction:column;
+  gap: 10px;
+  p {
+    margin: 0;
   }
 }
 

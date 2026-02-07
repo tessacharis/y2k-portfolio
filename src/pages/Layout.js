@@ -102,7 +102,7 @@ const Layout = () => {
                 </li>
                 <hr />
                 <li>
-                  <Link to="delete">Delete</Link>
+                  <Link to="NoPage">Delete</Link>
                 </li>
               </ul>
             </li>

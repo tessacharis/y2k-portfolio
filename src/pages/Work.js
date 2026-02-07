@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/work.scss";
 import MentorcliQ1 from "../assets/mentorcliq-design-system.webp";
-import MentorcliQ2 from "../assets/mentorcliq-design-system2.webp";
-import MentorcliQ3 from "../assets/mentorcliq-screenshots.png";
 import WIA from "../assets/WIA-DCC-Website.png";
 import UHM from "../assets/uhm-brand-websites-mockup.png";
 import CommandPlastic from "../assets/CommandPlastic-Thumbnail.png";
@@ -22,12 +20,18 @@ const Work = () => {
             <img
               className="portfolio-item-image"
               src={MentorcliQ1}
-              alt="An Image containing various UI elements and components, branding guidelines, color pallette and icon examples for the MentorcliQ Design System"
+              alt="Various UI elements and components, branding guidelines, color pallette and icon examples for the MentorcliQ Design System"
             />
-            <h2>MentorcliQ & CommunityCliQ</h2>
-            <h3>
-              Mentoring & Community SaaS | Web & Mobile App Product Design
-            </h3>
+            <div className="window-description-container">
+              <h2>MentorcliQ & CommunityCliQ</h2>
+              <h3>
+                Mentoring & Community SaaS | Web & Mobile App Product Design
+              </h3>
+              <p>
+                See how end-to-end UX processes contributed to 4x revenue growth
+                over five years.
+              </p>
+            </div>
             <Link to="/work/mentorcliq" className="details">
               Read Case Study
             </Link>
@@ -41,9 +45,17 @@ const Work = () => {
               src={WIA}
               alt="Screenshots of the WomenInAnalytics.com and DataConnectConf.com websites."
             />
-            <h2>Women in Analytics & DataConnect</h2>
-            <h3>Responsive Web Design for a women-led community and multiple conferences</h3>
-
+            <div className="window-description-container">
+              <h2>Women in Analytics & DataConnect</h2>
+              <h3>
+                Responsive Web Design for a women-led community and multiple
+                conferences
+              </h3>
+              <p>
+                Improved site architecture and consistent brand presence across
+                two sites decreased overall bounce rate by 30%.
+              </p>
+            </div>
             <Link to="/work/wia-dcc" className="details">
               Read Case Study
             </Link>
@@ -57,8 +69,10 @@ const Work = () => {
               src={UHM}
               alt="Union Home Mortgage's family of brands and website screenshots mocked up inside of large and small devices."
             />
-            <h2>Union Home Mortgage & Other Brands</h2>
-            <h3>Responsive Website Design & Interal Product Development</h3>
+            <div className="window-description-container">
+              <h2>Union Home Mortgage & Other Brands</h2>
+              <h3>Responsive Website Design & Interal Product Development</h3>
+            </div>
             <Link to="/work/uhm" className="details">
               Read Case Study
             </Link>
@@ -68,7 +82,7 @@ const Work = () => {
       <br />
       <br />
       <div className="heading-container">
-      <h2>Small Website Projects</h2>
+        <h2>Small Website Projects</h2>
       </div>
       <div className="grid-container">
         <div className="window-content window-content__static">

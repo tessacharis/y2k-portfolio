@@ -12,12 +12,11 @@ const CustomStyle = {};
 export function DraggableWindow({ id, content, title, isOpen, children }) {
   useGSAP(() => {
     if (!isMobile) {
-    Draggable.create(".window-content", {
-      inertia: true,
-      bounds: ".container",
-    });
+      Draggable.create(".window-content", {
+        inertia: true,
+        bounds: ".container",
+      });
     }
-
 
     SplitText.create(".headline", {
       type: "chars, word",
