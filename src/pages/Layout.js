@@ -154,14 +154,6 @@ const Layout = () => {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="https://dribbble.com/tessacharis"
-                    target="_blank"
-                    rel="noreferrer">
-                    Dribbble
-                  </a>
-                </li>
-                <li>
                   <a href="mailto:tessacharis@gmail.com">Email me</a>
                 </li>
                 <li>
