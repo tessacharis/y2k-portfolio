@@ -15,7 +15,7 @@
   @media screen and (max-width: 768px) {
     padding: 0px 0px;
   }
-    
+
   &.window-content__static {
     position: relative;
     margin: 0 auto;
@@ -41,14 +41,23 @@
     }
   }
 
-  h2, .letter, .headline {
-    font-family: Pixelify Sans !important;
-    text-transform: uppercase;
+  h2,
+  .letter,
+  .headline {
+    font-family:
+      Space Grotesk,
+      Arial,
+      Helvetica,
+      sans-serif !important;
+    text-transform: capitalize;
     color: $purple;
     font-weight: bold;
     display: inline-block;
     will-change: transform;
     font-size: 32px;
+    @media screen and (max-width: 768px) {
+      font-size: 28px;
+    }
   }
 
   .letter {
@@ -82,11 +91,13 @@
     top: 10px;
     background-color: $purple;
     color: $white;
-    border: 5px solid $neon-green;
+    // border: 5px solid $neon-green;
+    border: 3px solid $neon-green;
     width: auto;
     padding: 5px 15px;
     text-decoration: none;
     font-weight: bold;
+    box-shadow: 5px 5px 0px #000; /* Retro shadow effect */
     &:hover {
       background-color: $purple-dark;
       border-color: $pink;
@@ -119,7 +130,6 @@
     padding: 10px;
   }
 }
-
 
 @keyframes move-text {
   0% {

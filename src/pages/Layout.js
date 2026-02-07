@@ -59,7 +59,7 @@ const Layout = () => {
             <img
               src={logo}
               class="logo"
-              alt="Tessa Newbacher: UI/UX Designer"
+              alt="Tessa Newbacher: Senior UI/UX Web & Product Designer"
             />
           </Link>
           <button class="mobile-menu" onClick={() => setShowMenu(!showMenu)}>

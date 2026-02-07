@@ -79,7 +79,6 @@ const WIADCC = () => {
                     target="_blank">
                     WomenInAnalytics.com
                   </Link>
-                  &nbsp;&nbsp;
                   <Link
                     className="details"
                     to="https://www.dataconnectconf.com"

@@ -29,7 +29,7 @@ const Work = () => {
               Mentoring & Community SaaS | Web & Mobile App Product Design
             </h3>
             <Link to="/work/mentorcliq" className="details">
-              View Project Details
+              Read Case Study
             </Link>
           </div>
         </div>
@@ -45,7 +45,7 @@ const Work = () => {
             <h3>Responsive Web Design for a women-led community and multiple conferences</h3>
 
             <Link to="/work/wia-dcc" className="details">
-              View Project Details
+              Read Case Study
             </Link>
           </div>
         </div>
@@ -60,7 +60,7 @@ const Work = () => {
             <h2>Union Home Mortgage & Other Brands</h2>
             <h3>Responsive Website Design & Interal Product Development</h3>
             <Link to="/work/uhm" className="details">
-              View Project Details
+              Read Case Study
             </Link>
           </div>
         </div>

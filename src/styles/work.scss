@@ -27,6 +27,9 @@ section {
 
 .portfolio-item {
   margin-top: -100px;
+  @media screen and (max-width: 768px) {
+    margin-top: 40px;
+  }
 }
 
 .portfolio-item {
@@ -138,6 +141,8 @@ img {
   font-weight: bold;
   transition: 0.2s ease-in-out;
   width: 100%;
+  box-shadow: 5px 5px 0px #000; /* Retro shadow effect */
+
   &:hover {
     background-color: $purple-dark;
     border-color: $pink;
@@ -152,7 +157,7 @@ img {
   & > .window-content-header {
     background-color: $gray;
     color: $purple-dark;
-    padding: 10px;
+    padding: 5px;
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -185,13 +190,15 @@ img {
 }
 
 .window-content-grid {
-  display: grid;
-  justify-items: start;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
-  grid-auto-flow: row;
-  @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
+  width: 100%;
+  @media screen and (min-width: 1200px) {
+    display: grid;
+    justify-items: start;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: row;
   }
 }
 
@@ -203,13 +210,13 @@ blockquote {
   padding: 20px;
   font-weight: 600;
   margin: 0px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Space Grotesk", Courier, monospace;
   position: relative;
   box-shadow: 5px 5px 0px #000; /* Retro shadow effect */
   p {
     margin: 0;
-    font-size: 0.9rem;
-    font-family: "Courier New", Courier, monospace;
+    font-size: 1rem;
+    font-family: "Space Grotesk", Courier, monospace;
   }
   cite {
     display: block;
@@ -218,6 +225,6 @@ blockquote {
     color: $purple-dark;
     text-align: right;
     font-size: 0.9rem;
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Space Grotesk", Courier, monospace;
   }
 }
