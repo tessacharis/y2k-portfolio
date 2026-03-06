@@ -7,8 +7,6 @@ import { Draggable, SplitText } from "gsap/all";
 gsap.registerPlugin(Draggable);
 gsap.registerPlugin(SplitText);
 
-const CustomStyle = {};
-
 export function DraggableWindow({ id, content, style, title, isOpen, children }) {
   useGSAP(() => {
     if (!isMobile) {

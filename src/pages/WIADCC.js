@@ -104,8 +104,8 @@ const WIADCC = () => {
                 </p>
                 <ul>
                   <li>
-                    <strong>Increased Page Views by 37%</strong> // 117K (2025)
-                    vs 85K (2023)
+                    <strong>Increased Page Views by 37%</strong> // 117K 2025
+                    vs 85K 2023
                   </li>
                   <li>
                     <strong>Decreased Overall Bounce Rate by 27%</strong> //

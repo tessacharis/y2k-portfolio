@@ -1,0 +1,67 @@
+@import "./colors.scss";
+
+.blog-item {
+  margin: 0 auto 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  gap: 50px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  &>.window-content {
+    width: 100%;
+    margin: 0px;
+
+    .window-content-container {
+      gap: 5px;
+
+      p {
+        padding: 0px;
+      }
+    }
+
+    h1 {
+      font-size: 32px;
+      font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+      text-transform: none;
+      font-style: normal;
+
+      margin-bottom: 0px;
+      font-weight: 800;
+
+      @media screen and (max-width: 768px) {
+        margin-top: 60px;
+        flex-direction: column;
+      }
+    }
+
+    h2 {}
+  }
+
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+    margin: 0px;
+    max-width: none;
+
+    .window-content {
+      margin: 0px;
+      padding: 20px;
+      width: 100%;
+      justify-content: center;
+
+      @media screen and (min-width: 1200px) {
+        min-width: 500px;
+      }
+    }
+  }
+}

@@ -83,6 +83,9 @@ const Layout = () => {
                 <li>
                   <Link to="/work" onClick={() => setShowMenu(!showMenu)}>Work</Link>
                 </li>
+                <li>
+                  <Link to="/blog" onClick={() => setShowMenu(!showMenu)}>Blog</Link>
+                </li>
               </ul>
             </li>
             <li className="dropdown">
