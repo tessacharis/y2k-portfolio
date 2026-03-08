@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Outlet, Link, useNavigate } from "react-router-dom";
+import { Outlet, Link, useNavigate, useLocation } from "react-router-dom";
+import ReactGA from "react-ga4";
 import logo from "../assets/logo.svg";
 import { Marquee } from "../components/Marquee.js";
 import "../styles/header.scss";
@@ -21,6 +22,11 @@ const Layout = () => {
 
   // Back/Forward (Undo/Redo) Buttons
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    ReactGA.send({ hitType: "pageview", page: location.pathname + location.search });
+  }, [location]);
 
   const goBack = () => {
     navigate(-1);
