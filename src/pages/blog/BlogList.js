@@ -1,29 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { createClient } from "contentful";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { client, urlFor } from "../../sanityClient";
+import { PortableText } from "@portabletext/react";
 import "../../styles/blog-list.scss";
 
 const BlogList = () => {
   const [blogPosts, setBlogPosts] = useState([]);
-  const client = createClient({
-    space: "ok7vpw9p3tc4",
-    accessToken: "XAZhF64q9Zev3eaVk7Id2sTNufW5yMhaaAgwWG2R09s",
-  });
 
   useEffect(() => {
     const getAllEntries = async () => {
       try {
-        await client.getEntries().then((entries) => {
-          console.log(entries);
-          setBlogPosts(entries);
-        });
+        const query = `*[_type == "post"]{
+          _id,
+          headline,
+          slug,
+          publishDate,
+          image,
+          summary
+        }`;
+
+        const posts = await client.fetch(query);
+        console.log("Sanity Posts:", posts);
+        setBlogPosts(posts);
       } catch (error) {
-        console.log(`Error fetching ${error}`);
+        console.error(`Error fetching posts:`, error);
       }
     };
+
     getAllEntries();
-  });
+  }, []);
 
   return (
     <section aria-labelledby="blog-heading">
@@ -31,28 +36,30 @@ const BlogList = () => {
         Blog & Resources
       </h2>
       <div className="grid-container">
-        {blogPosts?.items?.map((post) => (
+        {blogPosts?.map((post) => (
           <div
             className="window-content window-content__static blog-list-item"
-            key={post.sys.id}>
+            key={post._id}>
             <div className="window-content-container">
-              <img
-                className="blog-item-image"
-                src={post.fields.image.fields.file.url}
-                alt=""
-              />
               <div className="window-description-container">
-                <h2>{post.fields.headline}</h2>
+                <Link to={`/blog/${post.slug.current}`}>
+                  {post.image && (
+                    <img
+                      className="blog-item-image"
+                      src={urlFor(post.image).url()}
+                      alt={post.headline}
+                    />
+                  )}<h2>{post.headline}</h2></Link>
                 <h3>Posted on&nbsp;
-                  {new Intl.DateTimeFormat("en-GB", {
+                  {post.publishDate && new Intl.DateTimeFormat("en-GB", {
                     month: "long",
                     day: "2-digit",
                     year: "numeric",
-                  }).format(new Date(post.fields.publishDate))}
+                  }).format(new Date(post.publishDate))}
                 </h3>
-                {documentToReactComponents(post?.fields?.summary)}
+                {post.summary && <PortableText value={post.summary} />}
               </div>
-              <Link to={`/blog/${post.fields.slug}`} className="details">
+              <Link to={`/blog/${post.slug.current}`} className="details">
                 Read More
               </Link>
             </div>
