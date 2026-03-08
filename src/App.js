@@ -11,6 +11,7 @@ import WIADCC from "./pages/WIADCC.js";
 import UHM from "./pages/UHM.js";
 import Delete from "./pages/Delete.js";
 import NoPage from "./pages/NoPage.js";
+import ThankYou from "./pages/ThankYou.js";
 import BlogList from "./pages/blog/BlogList.js";
 import BlogDetails from "./pages/blog/BlogDetails.js";
 import "./styles/app.scss";
@@ -31,6 +32,7 @@ export default function App() {
             <Route path="/help" element={<Help />} />
             <Route path="/blog" element={<BlogList />} />
             <Route path="/blog/:slug" element={<BlogDetails />} />
+            <Route path="/thank-you" element={<ThankYou />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
