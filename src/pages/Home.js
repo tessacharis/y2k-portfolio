@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { DraggableWindow } from "../components/DraggableWindow";
 
@@ -6,7 +5,7 @@ import "../styles/home.scss";
 import pageData from "../content/home.json";
 
 const Home = () => {
-  const [pages, setPages] = useState(pageData);
+  const pages = pageData;
 
   return (
     <div className="window-container">

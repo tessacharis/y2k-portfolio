@@ -104,21 +104,21 @@ const WIADCC = () => {
                 </p>
                 <ul>
                   <li>
-                    <strong>Increased Page Views by 37%</strong> // 117K 2025
-                    vs 85K 2023
+                    <strong>Increased Page Views by 37%</strong> - 117K (2025)
+                    vs 85K (2023)
                   </li>
                   <li>
-                    <strong>Decreased Overall Bounce Rate by 27%</strong> //
+                    <strong>Decreased Overall Bounce Rate by 27%</strong> -
                     37.1% (2025) vs 50.7% (2023)
                   </li>
                   <li>
                     <strong>
                       Decreased Register Page Overall Bounce Rate by 92%
                     </strong>{" "}
-                    // 5.1% (2025) vs 66.8% (2023)
+                    - 5.1% (2025) vs 66.8% (2023)
                   </li>
                   <li>
-                    <strong>Increased overall High-Intent Engagement</strong> //
+                    <strong>Increased overall High-Intent Engagement</strong> -
                     Agenda Avg Time: up to 2m 23s (register-adjacent evaluation
                     page)
                   </li>

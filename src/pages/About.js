@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import pageData from "../content/about.json";
 import { DraggableWindow } from "../components/DraggableWindow";
 import headshot from "../assets/tessa-newbacher-headshot.jpg";
 import hello from "../assets/hello.png";

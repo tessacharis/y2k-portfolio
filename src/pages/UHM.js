@@ -269,7 +269,7 @@ const WIADCC = () => {
               <div class="window-content-small-container">
                 <img
                   src={Pres}
-                  alt="I am a white woman with dark hair, presenting on stage to the company at Playhouse Square in Cleveland, OH. Behind me is a slideshow and picture of me as pre-teen sitting in front of an old Windows 98, showcasing my love of tech since I was a kid."
+                  alt="I am a white woman with dark hair, presenting on stage to the company at Playhouse Square in Cleveland, OH. Behind me is a slideshow and me as a pre-teen sitting in front of an old Windows 98, showcasing my love of tech since I was a kid."
                 />
                 <ul>
                   <li>

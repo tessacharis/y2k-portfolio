@@ -39,16 +39,16 @@ const HtmlEmbed = ({ html }) => {
   return <div ref={containerRef} />;
 };
 
+const client = createClient({
+  space: "ok7vpw9p3tc4",
+  accessToken: "XAZhF64q9Zev3eaVk7Id2sTNufW5yMhaaAgwWG2R09s",
+});
+
 const BlogDetails = () => {
   let { slug } = useParams();
 
   const [singleBlogPost, setSingleBlogPost] = useState([]);
 
-
-  const client = createClient({
-    space: "ok7vpw9p3tc4",
-    accessToken: "XAZhF64q9Zev3eaVk7Id2sTNufW5yMhaaAgwWG2R09s",
-  });
 
   useEffect(() => {
 
