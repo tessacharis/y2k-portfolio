@@ -119,20 +119,20 @@ const MentorcliQ = () => {
                   <li>
                     Established <strong>end-to-end UX design</strong> processes
                     including user research, usability testing, and iterative
-                    validation
+                    validation.
                   </li>
                   <li>
                     Introduced and scaled a{" "}
                     <strong>React + Storybook design system</strong>, enabling
-                    faster development and consistent UI across products
+                    faster development and consistent UI across products.
                   </li>
                   <li>
                     Supported engineering teams during a major platform
-                    migration from Drupal 7 to a Spring / React architecture
+                    migration from Drupal 7 to a Spring / React architecture.
                   </li>
                   <li>
                     Worked with international engineering teams across the U.S.,
-                    Canada, and Armenia
+                    Canada, and Armenia.
                   </li>
                 </ul>
               </div>
@@ -149,27 +149,24 @@ const MentorcliQ = () => {
                   <li>
                     <strong>SmartSteps</strong>: AI-guided workflows that help
                     mentors and mentees navigate their relationship and stay on
-                    track
+                    track.
                   </li>
                   <li>
-                    <strong>CliQ AI</strong>: Particantp-facing AI assistant for
-                    in-product guidance and supprot
-                  </li>
-                  <li>
-                    <strong>Admin AI</strong>: AI Assitant for administrators to
+                    <strong>CliQ & Admin AI</strong>: AI assistant for
+                    in-product guidance and support for participants. Helps admins and internal teams to
                     surface insights, manage programs and reduce operational
-                    overhead
+                    overhead.
                   </li>
                   <li>
                     <strong>Content Generation with AI</strong>: Provided AI
                     Assitants embedded within user workflows to help them
                     generate goals, meeting agendas and more as they progress
-                    through the mentoring relationship
+                    through the mentoring relationship.
                   </li>
                   <li>
                     Designed the <strong>MentorcliQ Help Center</strong> within
                     the Zendesk environment, improving self-service support and
-                    reducing support requests
+                    reducing support requests.
                   </li>
                 </ul>
               </div>
