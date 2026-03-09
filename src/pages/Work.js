@@ -10,10 +10,10 @@ import AlignAI from "../assets/alignai-screenshots.png";
 
 const Work = () => {
   return (
-    <section aria-labelledby="portfolio-heading">
-      <h2 id="portfolio-heading" className="visually-hidden">
+    <section aria-labelledby="portfolio-heading" style={{ textAlign: "center", padding: "40px 20px" }}>
+      <h1 id="portfolio-heading" style={{ textAlign: "center", marginBottom: "60px" }}>
         Portfolio
-      </h2>
+      </h1>
       <div className="grid-container">
         <div className="window-content window-content__static">
           <div className="window-content-container">
@@ -32,7 +32,7 @@ const Work = () => {
                 over five years.
               </p>
             </div>
-            <Link to="/work/mentorcliq" className="details">
+            <Link to="/work/mentorcliq" className="button-primary">
               Read Case Study
             </Link>
           </div>
@@ -56,7 +56,7 @@ const Work = () => {
                 two sites decreased overall bounce rate by 30%.
               </p>
             </div>
-            <Link to="/work/wia-dcc" className="details">
+            <Link to="/work/wia-dcc" className="button-primary">
               Read Case Study
             </Link>
           </div>
@@ -73,7 +73,7 @@ const Work = () => {
               <h2>Union Home Mortgage & Other Brands</h2>
               <h3>Responsive Website Design & Interal Product Development</h3>
             </div>
-            <Link to="/work/uhm" className="details">
+            <Link to="/work/uhm" className="button-primary">
               Read Case Study
             </Link>
           </div>
