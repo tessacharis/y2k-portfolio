@@ -31,10 +31,10 @@ const BlogList = () => {
   }, []);
 
   return (
-    <section aria-labelledby="blog-heading">
-      <h2 id="blog-heading" className="visually-hidden">
+    <section aria-labelledby="blog-heading" style={{ textAlign: "center", padding: "40px 20px" }}>
+      <h1 id="blog-heading" style={{ textAlign: "center", marginBottom: "60px" }}>
         Blog & Resources
-      </h2>
+      </h1>
       <div className="grid-container">
         {blogPosts?.map((post) => (
           <div
@@ -59,7 +59,7 @@ const BlogList = () => {
                 </h3>
                 {post.summary && <PortableText value={post.summary} />}
               </div>
-              <Link to={`/blog/${post.slug.current}`} className="details">
+              <Link to={`/blog/${post.slug.current}`} className="button-primary">
                 Read More
               </Link>
             </div>

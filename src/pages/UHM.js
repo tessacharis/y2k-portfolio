@@ -281,7 +281,7 @@ const WIADCC = () => {
               </div>
             </div>
             <h2>Interested in learning more?</h2>
-            <Link to="/help" className="details">
+            <Link to="/help" className="button-primary">
               Contact me
             </Link>
           </div>

@@ -1,27 +1,424 @@
+@import "colors.scss";
+
 .headshot-container {
   position: relative;
   display: flex;
-  width: 220px;
-  float: left;
-  margin-right: 20px;
-  @media screen and (max-width: 768px) {
-    width: 110px;
-  }
+  width: auto;
+  justify-content: center;
 
   .headshot {
     border-radius: 50%;
     width: 200px;
-    float: left;
 
     @media screen and (max-width: 768px) {
-      width: 100px;
+      width: 140px;
     }
   }
 
   .hello {
     position: absolute;
     top: -10px;
-    right: 0px;
-    width: 100px;
+    right: 0%;
+    width: 90px;
+
+    @media screen and (max-width: 768px) {
+      right: 15%;
+      width: 60px;
+    }
+  }
+}
+
+.home-page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+
+  @media screen and (max-width: 1200px) {
+    padding: 0px;
+  }
+}
+
+.hero {
+  max-width: none;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(rgba($electric-indigo, 0.4) 0%, rgba($light-blue, 0.8) 100%),
+    url("../assets/backgroud-artwork.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media screen and (min-width: 1200px) {
+    padding: 6rem 4rem;
+    min-height: 600px;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .hero-content-container {
+    max-width: 1500px;
+    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    h2 {
+      font-weight: 900;
+    }
+
+    p {
+      max-width: 850px;
+      margin: 20px auto 80px auto;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
+
+  .window-container {
+    margin-top: 80px;
+  }
+}
+
+.hero.hero-about {
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.9) 70%, rgba(255, 255, 255, 0) 100%),
+    url("../assets/computer-edit.png");
+}
+
+.window-content.window-content--hero {
+  max-width: 1400px;
+
+  &>.window-content-container {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    &>h2 {
+      font-size: 3rem;
+    }
+
+    &>p {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.window-content.window-content--hero-sidebar {
+  background-image: url("../assets/computer-edit.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 400px;
+
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.glitch-title {
+  font-family: 'Lexend', sans-serif;
+  text-transform: none;
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+  font-style: normal;
+  margin-bottom: 20px;
+  font-size: 6rem;
+  color: $purple-dark;
+  -webkit-text-stroke: 1px $electric-indigo;
+  text-shadow: 2px 2px 0px $neon-green, -2px -2px 0px $pink;
+
+  @media screen and (max-width: 768px) {
+    font-size: 4rem;
+    width: 100%;
+  }
+
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 4px;
+    text-shadow: -4px 0 $pink;
+    clip: rect(24px, 1500px, 90px, 0);
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+  }
+
+  &::after {
+    left: -4px;
+    text-shadow: -4px 0 $light-blue;
+    clip: rect(85px, 1500px, 140px, 0);
+    animation: glitch-anim 2.5s infinite linear alternate-reverse;
+  }
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(15px, 1500px, 86px, 0);
+  }
+
+  20% {
+    clip: rect(32px, 1500px, 12px, 0);
+  }
+
+  40% {
+    clip: rect(86px, 1500px, 45px, 0);
+  }
+
+  60% {
+    clip: rect(10px, 1500px, 20px, 0);
+  }
+
+  80% {
+    clip: rect(60px, 1500px, 80px, 0);
+  }
+
+  100% {
+    clip: rect(40px, 1500px, 60px, 0);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip: rect(65px, 1500px, 100px, 0);
+  }
+
+  20% {
+    clip: rect(10px, 1500px, 40px, 0);
+  }
+
+  40% {
+    clip: rect(40px, 1500px, 80px, 0);
+  }
+
+  60% {
+    clip: rect(80px, 1500px, 15px, 0);
+  }
+
+  80% {
+    clip: rect(20px, 1500px, 60px, 0);
+  }
+
+  100% {
+    clip: rect(55px, 1500px, 30px, 0);
+  }
+}
+
+.services-section,
+.testimonials-section,
+.blogs-section {
+  width: 100%;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 120px 20px;
+  box-sizing: border-box;
+  max-width: none;
+}
+
+.services-content-wrapper,
+.testimonials-content-wrapper,
+.blogs-content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.services-heading,
+.testimonials-heading,
+.blogs-heading {
+  text-align: center;
+  color: $purple-dark;
+  margin-bottom: 40px;
+  font-size: 3rem;
+  font-weight: 800;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.services-grid,
+.testimonials-grid,
+.blogs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  padding: 30px;
+}
+
+.service-card {
+  width: calc(33.333% - 20px);
+  background-color: $white;
+  border-radius: 4px;
+
+  /* Primary/Secondary button style borders */
+  border: 5px solid $light-blue;
+  box-shadow: 6px 6px 0px $purple-dark;
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 8px 8px 0px $purple-dark;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: calc(50% - 15px);
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
+  .service-card-header {
+    background-color: $gray;
+    color: $electric-indigo;
+    padding: 8px 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    align-items: center;
+    font-family: 'Pixelify Sans', "MS Sans Serif", Arial, sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    border-bottom: 3px solid $light-blue;
+
+    .close-btn {
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      background-color: $gray;
+      color: $electric-indigo;
+      border: 3px solid $electric-indigo;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      line-height: 1;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      transition: all 0.2s ease;
+
+      &::after {
+        content: '';
+      }
+
+      &:checked {
+        background-color: $neon-green;
+
+        &::after {
+          content: '✔';
+          color: $purple-dark;
+          font-size: 20px;
+        }
+      }
+
+      &:active {
+        background-color: $electric-indigo;
+      }
+
+      &:focus-visible {
+        outline: 3px solid $pink;
+        outline-offset: 2px;
+      }
+    }
+  }
+
+  &.inverted {
+    background-color: $purple-dark;
+    border-color: $purple-dark;
+    box-shadow: 6px 6px 0px $neon-green;
+
+    &:hover {
+      box-shadow: 8px 8px 0px $neon-green;
+    }
+
+    .service-card-header {
+      background-color: $electric-indigo;
+      color: $white;
+      border-bottom-color: $purple-dark;
+
+      .close-btn {
+        border-color: $neon-green;
+      }
+    }
+
+    .service-card-body {
+      color: $white;
+    }
+  }
+
+  .service-card-body {
+    padding: 20px;
+    color: $purple-dark;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.6;
+    flex-grow: 1;
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.5;
+      font-family: inherit;
+    }
+  }
+}
+
+.testimonials-grid {
+  flex-direction: row;
+
+  &>blockquote {
+    width: calc(50% - 20px);
+
+    &>p {
+      font-size: 1.25rem;
+    }
+
+    &>cite {
+      font-size: 1.12rem;
+    }
+  }
+}
+
+.blogs-grid {
+  flex-direction: row;
+}
+
+.cta-link-item {
+
+  &:hover,
+  &:focus {
+    background-color: $electric-indigo !important;
+    color: $white !important;
+    transform: translateY(-3px) translateX(3px);
+    box-shadow: -5px 5px 0px $neon-green;
   }
 }

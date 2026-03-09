@@ -74,13 +74,13 @@ const WIADCC = () => {
                 />
                 <div className="row">
                   <Link
-                    className="details"
+                    className="button-primary"
                     to="https://www.womeninanalytics.com"
                     target="_blank">
                     WomenInAnalytics.com
                   </Link>
                   <Link
-                    className="details"
+                    className="button-primary"
                     to="https://www.dataconnectconf.com"
                     target="_blank">
                     DataConnectConf.com
@@ -165,7 +165,7 @@ const WIADCC = () => {
               </div>
             </div>
             <h2>Interested in learning more?</h2>
-            <Link to="/help" className="details">
+            <Link to="/help" className="button-primary">
               Contact me
             </Link>
           </div>

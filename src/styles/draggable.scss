@@ -6,12 +6,13 @@
   display: block;
   border-radius: 4px;
   padding: 60px 50px;
-  border: 2px solid $electric-indigo;
+  border: 2px solid $purple-dark;
   max-width: 1000px;
   box-shadow: 10px 10px 0px rgba(24, 0, 31, 0.445);
   z-index: 0;
   margin: 0 auto;
   position: relative;
+
   @media screen and (max-width: 768px) {
     padding: 0px 0px;
   }
@@ -47,7 +48,7 @@
   .letter,
   .headline {
     font-family:
-      Space Grotesk,
+      Lexend,
       Arial,
       Helvetica,
       sans-serif !important;
@@ -57,6 +58,7 @@
     display: inline-block;
     will-change: transform;
     font-size: 32px;
+
     @media screen and (max-width: 768px) {
       font-size: 28px;
     }
@@ -79,7 +81,8 @@
     background-color: $purple;
     color: $white;
     font-weight: bold;
-    & > span {
+
+    &>span {
       font-family: Pixelify Sans !important;
       text-transform: lowercase;
       font-size: 25px;
@@ -99,7 +102,9 @@
     padding: 5px 15px;
     text-decoration: none;
     font-weight: bold;
-    box-shadow: 5px 5px 0px #000; /* Retro shadow effect */
+    box-shadow: 5px 5px 0px #000;
+
+    /* Retro shadow effect */
     &:hover {
       background-color: $purple-dark;
       border-color: $pink;
@@ -123,6 +128,7 @@
   top: 0px;
   left: 0px;
   margin: 0;
+
   @media screen and (max-width: 768px) {
     position: relative;
     top: 0;
@@ -135,10 +141,13 @@
 
 @keyframes move-text {
   0% {
-    transform: translateY(-20px); /* Example: move from above */
+    transform: translateY(-20px);
+    /* Example: move from above */
   }
+
   100% {
-    transform: translateY(0); /* Example: move to the original position */
+    transform: translateY(0);
+    /* Example: move to the original position */
   }
 }
 
@@ -148,11 +157,13 @@
     scale: 0;
     opacity: 0;
   }
+
   50% {
     overflow: hidden;
     scale: 1.2;
     opacity: 0.8;
   }
+
   100% {
     overflow: hidden;
     scale: 1;
