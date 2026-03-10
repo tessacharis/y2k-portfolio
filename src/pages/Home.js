@@ -110,8 +110,8 @@ const Home = () => {
     <div className="home-page-content" ref={container}>
       <section aria-label="hero-title" className="hero">
         <div class="hero-content-container">
-          <h1 id="hero-title" className="glitch-title" data-text="From Idea to Launched">
-            From Idea to Launched
+          <h1 id="hero-title" className="glitch-title" data-text="From Idea to Production">
+            From Idea to Production
           </h1>
           <h2>Design && Code && Strategy</h2>
           <p>
