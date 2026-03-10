@@ -395,8 +395,19 @@
 .testimonials-grid {
   flex-direction: row;
 
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 0px;
+    margin-top: 20px;
+  }
+
   &>blockquote {
     width: calc(50% - 20px);
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      margin: 0;
+    }
 
     &>p {
       font-size: 1.25rem;
@@ -410,6 +421,12 @@
 
 .blogs-grid {
   flex-direction: row;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 0px;
+    margin-top: 20px;
+  }
 }
 
 .cta-link-item {
