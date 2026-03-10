@@ -92,6 +92,10 @@ h1 {
   font-size: 5em;
   font-family: Lexend;
   color: $electric-indigo;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2em;
+  }
 }
 
 .mq-small-image {
