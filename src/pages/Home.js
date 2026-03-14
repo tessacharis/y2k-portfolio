@@ -277,9 +277,10 @@ const Home = () => {
       <section aria-label="call-to-action" className="cta-section" style={{ padding: "80px 20px" }}>
         <div className="cta-content-wrapper" style={{ maxWidth: "1400px", margin: "0 auto" }}>
           <div style={{ padding: "40px", backgroundColor: "#fff" }}>
+            <h2 style={{ fontSize: "2rem", marginBottom: "20px" }}>Can we create something beautiful?</h2>
             <div className="layout-split-1-3">
               <div className="col-1" style={{ flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start" }}>
-                <h2 style={{ fontSize: "2rem", marginBottom: "20px" }}>Can we create something beautiful?</h2>
+                <h3 style={{ fontSize: "1.5rem", marginBottom: "20px" }}>Tessa Newbacher</h3>
                 <p><strong>Senior Consultant & Developer | 10+ Years Experience</strong></p>
                 <p>
                   I partner with companies to turn complex problems into elegant, scalable digital solutions. From strategic planning and UX design to full-stack development, I deliver end-to-end impact.
@@ -294,7 +295,7 @@ const Home = () => {
               </div>
 
               <div className="col-2">
-                <h3 style={{ fontSize: "1.5rem", marginBottom: "20px" }}>Dive Deeper</h3>
+
                 <div className="links-list" style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
                   <Link to="/blog" style={{ padding: "20px", border: "3px solid #AAEA01", textDecoration: "none", color: "#320b86", fontWeight: "bold", backgroundColor: "#f9f9f9", transition: "0.2s ease" }} className="cta-link-item">
                     View All Blog Posts & Resources

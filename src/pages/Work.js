@@ -12,7 +12,7 @@ const Work = () => {
   return (
     <section aria-labelledby="portfolio-heading" style={{ textAlign: "center", padding: "40px 20px" }}>
       <h1 id="portfolio-heading" style={{ textAlign: "center", marginBottom: "60px" }}>
-        Portfolio
+        Work
       </h1>
       <div className="grid-container">
         <div className="window-content window-content__static">
@@ -86,7 +86,7 @@ const Work = () => {
       </div>
       <div className="grid-container">
         <div className="window-content window-content__static">
-          <div className="window-content-container">
+          <div className="window-content-container" style={{ textAlign: "center", padding: "20px", margin: "20px" }}>
             <img
               className="portfolio-item-image"
               src={AlignAI}

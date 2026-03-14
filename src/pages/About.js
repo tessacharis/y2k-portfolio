@@ -149,18 +149,24 @@ const About = () => {
                   Contributed to sustainable ARR growth over 5 years by implementing scalable UX processes and design systems that improved software adoptability for global enterprises.
                 </p>
               </div>
+              <Link to="/work/mentorcliq" className="button-primary" style={{ marginTop: "10px", width: "100%", textAlign: "center", boxSizing: "border-box" }}>
+                View Project
+              </Link>
             </div>
 
             <div className="service-card" style={{ padding: "30px", backgroundColor: "#fff", display: "flex", flexDirection: "column", gap: "10px" }}>
               <div className="service-card-header" style={{ borderBottom: "none", paddingBottom: "0px", justifyContent: "flex-start" }}>
-                <span style={{ fontSize: "3rem", color: "#FF007F", fontWeight: "900", lineHeight: "1" }}>-30%</span>
+                <span style={{ fontSize: "3rem", color: "#FF007F", fontWeight: "900", lineHeight: "1" }}>+30%</span>
               </div>
               <div className="service-card-body" style={{ padding: "0px" }}>
-                <h3 style={{ fontSize: "1.4rem", color: "#320b86", margin: "10px 0" }}>Bounce Rate for WIA</h3>
+                <h3 style={{ fontSize: "1.4rem", color: "#320b86", margin: "10px 0" }}>Engagement Rate for WIA</h3>
                 <p>
                   Restructured site architecture and optimized responsive web designs for multiple heavily trafficked conference sites, significantly improving memberships and ticket sales.
                 </p>
               </div>
+              <Link to="/work/wia-dcc" className="button-primary" style={{ marginTop: "10px", width: "100%", textAlign: "center", boxSizing: "border-box" }}>
+                View Project
+              </Link>
             </div>
 
             <div className="service-card" style={{ padding: "30px", backgroundColor: "#fff", display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -173,6 +179,9 @@ const About = () => {
                   Created and deployed an internal design system that standardized UI components cross-brand, drastically reducing development and QA time on all subsequent projects.
                 </p>
               </div>
+              <Link to="/work/uhm" className="button-primary" style={{ marginTop: "10px", width: "100%", textAlign: "center", boxSizing: "border-box" }}>
+                View Project
+              </Link>
             </div>
 
           </div>
@@ -183,9 +192,10 @@ const About = () => {
       <section aria-label="call-to-action" className="cta-section" style={{ padding: "80px 20px" }}>
         <div className="cta-content-wrapper" style={{ maxWidth: "1400px", margin: "0 auto" }}>
           <div style={{ padding: "40px", backgroundColor: "#fff", boxShadow: "5px 5px 0px #000", border: "5px solid #000" }}>
+            <h2 style={{ fontSize: "2rem", marginBottom: "20px" }}>Can we create something beautiful?</h2>
             <div className="layout-split-1-3">
               <div className="col-1" style={{ flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start" }}>
-                <h2 style={{ fontSize: "2rem", marginBottom: "20px" }}>Can we create something beautiful?</h2>
+                <h3 style={{ fontSize: "1.5rem", marginBottom: "20px" }}>Tessa Newbacher</h3>
                 <p><strong>Senior Consultant & Developer | 10+ Years Experience</strong></p>
                 <p>
                   I partner with companies to turn complex problems into elegant, scalable digital solutions. From strategic planning and UX design to full-stack development, I deliver end-to-end impact.
@@ -200,7 +210,6 @@ const About = () => {
               </div>
 
               <div className="col-2">
-                <h3 style={{ fontSize: "1.5rem", marginBottom: "20px" }}>Dive Deeper</h3>
                 <div className="links-list" style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
                   <Link to="/blog" style={{ padding: "20px", border: "3px solid #AAEA01", textDecoration: "none", color: "#320b86", fontWeight: "bold", backgroundColor: "#f9f9f9", transition: "0.2s ease" }} className="cta-link-item">
                     View All Blog Posts & Resources
