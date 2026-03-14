@@ -46,20 +46,7 @@ const WIADCC = () => {
                   Operations, leading the unification of brand experiences
                   across customer-facing websites and internal software tools.
                 </p>
-                <blockquote>
-                  <p>
-                    "People like Tessa are few and far between. Tessa worked for
-                    and with me in several capacities over a two-year stretch at
-                    Union Home Mortgage. Tessa's expansive skillset is
-                    impressive and consistently evolving. She's an avid learner
-                    and a determined self-starter. Her skills as a marketer,
-                    designer and developer combined with her strategic-thinking
-                    chops make her an asset for any team. Plus, she laughs at
-                    your jokes ... even the lame ones (especially the lame
-                    ones). She's a real gem."
-                  </p>
-                  <cite>- Gina Simpson, Marketing Manger</cite>
-                </blockquote>
+
               </div>
             </div>
             <div className="window-content-small">
@@ -251,12 +238,7 @@ const WIADCC = () => {
                     operations teams
                   </li>
                 </ul>
-                <blockquote>
-                  <p>
-                    I worked with Tessa during my internship at Union Home Mortgage in Summer 2018. She was my mentor as well. Tessa is an exceptional front-end developer and designer. She also has great ideas, one of which was a design system for the software development team to use to maintain a consistent branding and style across company applications. She stood up for her idea, petitioned it to be implemented, and I had the opportunity to help develop and deploy it. Being the primary front-end developer on her team, Tessa takes on a lot of work, more than it seems she has the time for, but she always seemed to get it done. I came in with a knowledge of front-end development and Tessa trusted me with work on the company's main website and other important applications, something I was very grateful for. I learned a lot from Tessa and enjoyed working with her.
-                  </p>
-                  <cite>- Alyssa Melendez, Owner of Cosite</cite>
-                </blockquote>
+
               </div>
             </div>
             <div className="window-content-small">
@@ -280,11 +262,32 @@ const WIADCC = () => {
                 </ul>
               </div>
             </div>
-            <h2>Interested in learning more?</h2>
-            <Link to="/help" className="button-primary">
-              Contact me
-            </Link>
+            <blockquote>
+              <p>
+                "People like Tessa are few and far between. Tessa worked for
+                and with me in several capacities over a two-year stretch at
+                Union Home Mortgage. Tessa's expansive skillset is
+                impressive and consistently evolving. She's an avid learner
+                and a determined self-starter. Her skills as a marketer,
+                designer and developer combined with her strategic-thinking
+                chops make her an asset for any team. Plus, she laughs at
+                your jokes ... even the lame ones (especially the lame
+                ones). She's a real gem."
+              </p>
+              <cite>- Gina Simpson, Marketing Manger</cite>
+            </blockquote>
+            <blockquote>
+              <p>
+                I worked with Tessa during my internship at Union Home Mortgage in Summer 2018. She was my mentor as well. Tessa is an exceptional front-end developer and designer. She also has great ideas, one of which was a design system for the software development team to use to maintain a consistent branding and style across company applications. She stood up for her idea, petitioned it to be implemented, and I had the opportunity to help develop and deploy it. Being the primary front-end developer on her team, Tessa takes on a lot of work, more than it seems she has the time for, but she always seemed to get it done. I came in with a knowledge of front-end development and Tessa trusted me with work on the company's main website and other important applications, something I was very grateful for. I learned a lot from Tessa and enjoyed working with her.
+              </p>
+              <cite>- Alyssa Melendez, Owner of Cosite</cite>
+            </blockquote>
+
           </div>
+          <h2>Interested in learning more?</h2>
+          <Link to="/help" className="button-primary">
+            Contact me
+          </Link>
         </div>
       </div>
     </section>

@@ -15,7 +15,6 @@ const WIADCC = () => {
             <h1 id="portfolio-heading">
               Women in Analytics / DataConnect Conference
             </h1>
-            <span className="badge">Currently Freelancing</span>
           </div>
           <hr />
           <h2>Freelance Senior Website Designer & Developer</h2>
