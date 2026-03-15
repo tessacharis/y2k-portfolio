@@ -89,13 +89,6 @@ const BlogDetails = () => {
               <HtmlEmbed html={singleBlogPost.embeddedHtml} />
             )}
           </div>}
-
-        <div className="window-content">
-          <h3>Hire a pro to help you check these off your to-do list</h3>
-          <div className="row">
-            <a href="/help" className="button-primary">Book Consultation</a>
-          </div>
-        </div>
       </div>
     </section>
   );

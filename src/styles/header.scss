@@ -4,9 +4,12 @@
 
 p,
 a,
-button {
+button,
+ul,
+ol {
   font-size: 1em;
   line-height: 1.5;
+  color: $dark-gray;
 }
 
 * {
@@ -20,7 +23,7 @@ button:focus {
 }
 
 header {
-  background-color: #f7f7f7;
+  background-color: $gray;
   height: 40px;
   display: flex;
   flex-direction: row;
@@ -32,6 +35,8 @@ header {
   border-bottom: 1px solid $purple;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
   z-index: 999;
+  position: sticky;
+  top: 0;
 
   @media screen and (max-width: 768px) {
     padding: 0px 5px;
@@ -75,7 +80,7 @@ footer {
   padding: 40px;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.9);
+  background-color: $white;
   gap: 20px;
   border-top: 3px solid $light-blue;
 

@@ -16,7 +16,6 @@ const WIADCC = () => {
               Women in Analytics / DataConnect Conference
             </h1>
           </div>
-          <hr />
           <h2>Freelance Senior Website Designer & Developer</h2>
           <h3>2023 - 2025 | Marketing & Community Websites | Webflow</h3>
           <div className="window-content-grid">
@@ -163,10 +162,6 @@ const WIADCC = () => {
                 </ul>
               </div>
             </div>
-            <h2>Interested in learning more?</h2>
-            <Link to="/help" className="button-primary">
-              Contact me
-            </Link>
           </div>
         </div>
       </div>

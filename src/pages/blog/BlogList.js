@@ -31,8 +31,8 @@ const BlogList = () => {
   }, []);
 
   return (
-    <section aria-labelledby="blog-heading" style={{ textAlign: "center", padding: "40px 20px" }}>
-      <h1 id="blog-heading" style={{ textAlign: "center", marginBottom: "60px" }}>
+    <section aria-labelledby="blog-heading" className="blog-list-section">
+      <h1 id="blog-heading" className="blog-list-title">
         Blog & Resources
       </h1>
       <div className="grid-container">
@@ -58,10 +58,11 @@ const BlogList = () => {
                   }).format(new Date(post.publishDate))}
                 </h3>
                 {post.summary && <PortableText value={post.summary} />}
+
+                <Link to={`/blog/${post.slug.current}`} className="button-primary">
+                  Read More
+                </Link>
               </div>
-              <Link to={`/blog/${post.slug.current}`} className="button-primary">
-                Read More
-              </Link>
             </div>
           </div>
         ))}

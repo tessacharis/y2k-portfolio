@@ -15,7 +15,6 @@ const WIADCC = () => {
           <div className="portfolio-heading-container">
             <h1 id="portfolio-heading">Union Home Mortgage</h1>
           </div>
-          <hr />
           <h2>
             Marketing Intern → <br />
             Digital Marketing Specialist → <br />
@@ -284,10 +283,6 @@ const WIADCC = () => {
             </blockquote>
 
           </div>
-          <h2>Interested in learning more?</h2>
-          <Link to="/help" className="button-primary">
-            Contact me
-          </Link>
         </div>
       </div>
     </section>
