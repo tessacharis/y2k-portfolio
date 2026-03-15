@@ -10,6 +10,7 @@ import { client, urlFor } from "../sanityClient";
 import { PortableText } from "@portabletext/react";
 import headshot from "../assets/tessa-newbacher-headshot.jpg";
 import hello from "../assets/hello.png";
+import { RetroLoader } from "../components/RetroLoader.js";
 import "../styles/home.scss";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -238,38 +239,42 @@ const Home = () => {
           <h2 id="blogs-heading" className="blogs-heading">Blog & Resources</h2>
           <p style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>Take a peek into my brain and take what you like from my tutorials and free downloads. Give me your email to sign up for a newsletter even if anything you see helps you along the way.</p>
           <div className="blogs-grid">
-            {recentBlogs?.map((post) => (
-              <div
-                className="window-content window-content__static blog-list-item"
-                key={post._id}
-              >
-                <div className="window-content-container">
-                  <div className="window-description-container">
-                    <Link to={`/blog/${post.slug.current}`}>
-                      {post.image && (
-                        <img
-                          className="blog-item-image"
-                          src={urlFor(post.image).url()}
-                          alt={post.headline}
-                        />
-                      )}
-                      <h2>{post.headline}</h2>
-                    </Link>
-                    <h3>Posted on&nbsp;
-                      {post.publishDate && new Intl.DateTimeFormat("en-GB", {
-                        month: "long",
-                        day: "2-digit",
-                        year: "numeric",
-                      }).format(new Date(post.publishDate))}
-                    </h3>
-                    {post.summary && <PortableText value={post.summary} />}
-                    <Link to={`/blog/${post.slug.current}`} className="button-primary">
-                      Read More
-                    </Link>
+            {recentBlogs && recentBlogs.length > 0 ? (
+              recentBlogs.map((post) => (
+                <div
+                  className="window-content window-content__static blog-list-item"
+                  key={post._id}
+                >
+                  <div className="window-content-container">
+                    <div className="window-description-container">
+                      <Link to={`/blog/${post.slug.current}`}>
+                        {post.image && (
+                          <img
+                            className="blog-item-image"
+                            src={urlFor(post.image).url()}
+                            alt={post.headline}
+                          />
+                        )}
+                        <h2>{post.headline}</h2>
+                      </Link>
+                      <h3>Posted on&nbsp;
+                        {post.publishDate && new Intl.DateTimeFormat("en-GB", {
+                          month: "long",
+                          day: "2-digit",
+                          year: "numeric",
+                        }).format(new Date(post.publishDate))}
+                      </h3>
+                      {post.summary && <PortableText value={post.summary} />}
+                      <Link to={`/blog/${post.slug.current}`} className="button-primary">
+                        Read More
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))
+            ) : (
+              <RetroLoader message="Loading Recent Posts..." />
+            )}
           </div>
         </div>
       </section>

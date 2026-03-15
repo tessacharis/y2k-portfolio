@@ -74,7 +74,7 @@ const Layout = () => {
     <div className="container">
       <header class="App-header">
         <nav aria-label="Main Navigation">
-          <a className="visually-hidden" href="#main">
+          <a className="skip-to-content" href="#main">
             Skip to content
           </a>
           <Link to="/" class="logo-link" onClick={() => setShowMenu(!showMenu)}>

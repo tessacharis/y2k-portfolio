@@ -16,12 +16,10 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  opacity: 0.5;
+  opacity: 0.8;
   z-index: 9998; // Keep it just under the cursor layer
-  
-  background: radial-gradient($neon-green, $electric-indigo);
-  // Default shadow background to the dark gray fallback (light theme default)
-  background-color: $dark-gray; 
+  filter: blur(10px);
+  background: $neon-green 100%;
 
   &.dark-theme {
     background-color: $neon-green;
