@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import { client, urlFor } from "../../sanityClient";
 import { PortableText } from "@portabletext/react";
+import { RetroLoader } from "../../components/RetroLoader.js";
 import "../../styles/blog.scss";
 
 const HtmlEmbed = ({ html }) => {
@@ -50,7 +51,7 @@ const BlogDetails = () => {
     getEntryBySlug();
   }, [slug]);
 
-  if (!singleBlogPost) return <div>Loading...</div>;
+  if (!singleBlogPost) return <RetroLoader message="Downloading Post..." />;
 
   return (
     <section className="blog-item" aria-labelledby="blog-heading">
@@ -89,13 +90,6 @@ const BlogDetails = () => {
               <HtmlEmbed html={singleBlogPost.embeddedHtml} />
             )}
           </div>}
-
-        <div className="window-content">
-          <h3>Hire a pro to help you check these off your to-do list</h3>
-          <div className="row">
-            <a href="/help" className="button-primary">Book Consultation</a>
-          </div>
-        </div>
       </div>
     </section>
   );

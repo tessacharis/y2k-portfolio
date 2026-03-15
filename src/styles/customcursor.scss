@@ -1,0 +1,27 @@
+@import "colors.scss";
+
+// Main cursor wrapper
+.custom-cursor {
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+}
+
+// Glowing shadow trail
+.custom-cursor-shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none; // Prevent hover trapping
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  opacity: 0.8;
+  z-index: 9998; // Keep it just under the cursor layer
+  filter: blur(10px);
+  background: $neon-green 100%;
+
+  &.dark-theme {
+    background-color: $neon-green;
+  }
+}

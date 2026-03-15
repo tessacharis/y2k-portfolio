@@ -34,6 +34,12 @@ section {
   &>.window-content {
     max-width: 1500px;
     margin-top: 40px;
+
+
+  }
+
+  h3 {
+    color: $dark-gray;
   }
 }
 
@@ -44,6 +50,7 @@ section {
   border-radius: 10px;
   width: 100%;
   padding: 10px;
+
 }
 
 .badge {
@@ -124,7 +131,7 @@ img {
 
 .button-primary {
   background-color: $purple;
-  color: $white;
+  color: #fff;
   border: 10px solid $neon-green;
   width: auto;
   padding: 5px 20px;
@@ -145,7 +152,7 @@ img {
 }
 
 .button-secondary {
-  background-color: #E6E6E6;
+  background-color: $gray;
   color: $purple-dark;
   border: 10px solid $purple;
   width: auto;
@@ -214,9 +221,17 @@ img {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 
   p {
     margin: 0;
+    padding: 0;
+  }
+
+  h3 {
+    color: $dark-gray;
   }
 }
 
@@ -235,11 +250,11 @@ img {
 }
 
 blockquote {
-  background-color: $light-blue;
+  background-color: $light-gray;
   border: 3px solid $purple-dark;
   border-left: 10px solid $pink;
   /* Contrasting blue border */
-  color: #000;
+  color: $dark-gray;
   padding: 20px;
   font-weight: 600;
   margin: 0px;
@@ -252,6 +267,7 @@ blockquote {
     margin: 0;
     font-size: 1rem;
     font-family: "Space Grotesk", Courier, monospace;
+    color: $black;
   }
 
   cite {

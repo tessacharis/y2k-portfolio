@@ -1,0 +1,56 @@
+@import "./colors.scss";
+
+.retro-loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 20px;
+
+  .window-content {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .loader-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .loader-message {
+    color: $dark-gray;
+    margin: 0;
+    font-size: 1.1rem;
+    text-align: left;
+  }
+
+  .progress-bar-container {
+    display: flex;
+    gap: 2px;
+    background-color: $gray;
+    border: 2px inset $gray; // Classic Windows 98 inset look
+    padding: 2px;
+    height: 30px;
+    width: 100%;
+  }
+
+  .progress-block {
+    flex: 1;
+    background-color: transparent;
+    transition: background-color 0.1s ease;
+
+    &.filled {
+      background-color: $neon-green;
+    }
+  }
+
+  .loader-percentage {
+    text-align: right;
+    margin: 0;
+    color: $dark-gray;
+    font-size: 0.9rem;
+  }
+}

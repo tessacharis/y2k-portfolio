@@ -1,0 +1,77 @@
+@import "colors.scss";
+
+.cta-section {
+  padding: 80px 20px;
+
+  .cta-content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .cta-inner {
+    padding: 40px;
+    background-color: $white;
+
+    &.cta-inner--bordered {
+      box-shadow: 5px 5px 0px $black;
+      border: 5px solid $black;
+    }
+  }
+
+  .cta-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .cta-col-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .cta-subheading {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: $dark-gray;
+    }
+
+    .cta-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+      color: $dark-gray;
+
+      .cta-list-item {
+        margin-bottom: 10px;
+      }
+
+      .cta-link {
+        text-decoration: underline;
+        color: $electric-indigo;
+      }
+    }
+
+    .cta-button {
+      margin-top: 10px;
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+    }
+  }
+
+  .cta-links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .cta-link-item {
+      padding: 20px;
+      border: 3px solid $neon-green;
+      text-decoration: none;
+      color: $dark-gray;
+      font-weight: bold;
+      background-color: $light-gray;
+      transition: 0.2s ease;
+    }
+  }
+}

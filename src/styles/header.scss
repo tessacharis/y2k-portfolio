@@ -4,9 +4,12 @@
 
 p,
 a,
-button {
+button,
+ul,
+ol {
   font-size: 1em;
   line-height: 1.5;
+  color: $dark-gray;
 }
 
 * {
@@ -19,8 +22,28 @@ button:focus {
   outline: 1px solid $electric-indigo;
 }
 
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background-color: $electric-indigo;
+  color: $white !important;
+  font-weight: bold;
+  padding: 10px 20px;
+  z-index: 10000;
+  text-decoration: none;
+  border-bottom-right-radius: 4px;
+  transition: top 0.2s ease;
+
+  &:focus {
+    top: 0;
+    outline: 3px solid $neon-green;
+    outline-offset: 2px;
+  }
+}
+
 header {
-  background-color: #f7f7f7;
+  background-color: $gray;
   height: 40px;
   display: flex;
   flex-direction: row;
@@ -32,6 +55,8 @@ header {
   border-bottom: 1px solid $purple;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
   z-index: 999;
+  position: sticky;
+  top: 0;
 
   @media screen and (max-width: 768px) {
     padding: 0px 5px;
@@ -67,15 +92,13 @@ header {
   background-color: $light-blue;
 }
 
-.main {}
-
 footer {
   display: flex;
   flex-direction: column;
   padding: 40px;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.9);
+  background-color: $white;
   gap: 20px;
   border-top: 3px solid $light-blue;
 
@@ -176,7 +199,6 @@ footer {
     font-family: Lexend;
     color: $electric-indigo;
     -webkit-text-stroke: 1px $electric-indigo;
-    text-stroke: 1px $electric-indigo;
 
     @media screen and (max-width: 768px) {
       font-size: 3em;

@@ -10,6 +10,7 @@ import { client, urlFor } from "../sanityClient";
 import { PortableText } from "@portabletext/react";
 import headshot from "../assets/tessa-newbacher-headshot.jpg";
 import hello from "../assets/hello.png";
+import { RetroLoader } from "../components/RetroLoader.js";
 import "../styles/home.scss";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -115,7 +116,7 @@ const Home = () => {
           </h1>
           <h2>Design && Code && Strategy</h2>
           <p>
-            I'm Tessa — a rare mix of UI/UX designer, front-end developer, and product strategist. Instead of managing three vendors, you get one expert who thinks holistically across the whole stack and ships work to reach your goals.
+            Hi, I'm Tessa Newbacher — a rare mix of UI/UX designer, front-end developer, and product strategist. Instead of managing three vendors, you get one expert who thinks holistically across the whole stack and ships work to reach your business goals.
           </p>
           <div class="row">
             <Link to="/help" className="button-primary">
@@ -238,80 +239,42 @@ const Home = () => {
           <h2 id="blogs-heading" className="blogs-heading">Blog & Resources</h2>
           <p style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>Take a peek into my brain and take what you like from my tutorials and free downloads. Give me your email to sign up for a newsletter even if anything you see helps you along the way.</p>
           <div className="blogs-grid">
-            {recentBlogs?.map((post) => (
-              <div
-                className="window-content window-content__static blog-list-item"
-                key={post._id}
-              >
-                <div className="window-content-container">
-                  <div className="window-description-container">
-                    <Link to={`/blog/${post.slug.current}`}>
-                      {post.image && (
-                        <img
-                          className="blog-item-image"
-                          src={urlFor(post.image).url()}
-                          alt={post.headline}
-                        />
-                      )}
-                      <h2>{post.headline}</h2>
-                    </Link>
-                    <h3>Posted on&nbsp;
-                      {post.publishDate && new Intl.DateTimeFormat("en-GB", {
-                        month: "long",
-                        day: "2-digit",
-                        year: "numeric",
-                      }).format(new Date(post.publishDate))}
-                    </h3>
-                    {post.summary && <PortableText value={post.summary} />}
+            {recentBlogs && recentBlogs.length > 0 ? (
+              recentBlogs.map((post) => (
+                <div
+                  className="window-content window-content__static blog-list-item"
+                  key={post._id}
+                >
+                  <div className="window-content-container">
+                    <div className="window-description-container">
+                      <Link to={`/blog/${post.slug.current}`}>
+                        {post.image && (
+                          <img
+                            className="blog-item-image"
+                            src={urlFor(post.image).url()}
+                            alt={post.headline}
+                          />
+                        )}
+                        <h2>{post.headline}</h2>
+                      </Link>
+                      <h3>Posted on&nbsp;
+                        {post.publishDate && new Intl.DateTimeFormat("en-GB", {
+                          month: "long",
+                          day: "2-digit",
+                          year: "numeric",
+                        }).format(new Date(post.publishDate))}
+                      </h3>
+                      {post.summary && <PortableText value={post.summary} />}
+                      <Link to={`/blog/${post.slug.current}`} className="button-primary">
+                        Read More
+                      </Link>
+                    </div>
                   </div>
-                  <Link to={`/blog/${post.slug.current}`} className="button-primary">
-                    Read More
-                  </Link>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section aria-label="call-to-action" className="cta-section" style={{ padding: "80px 20px" }}>
-        <div className="cta-content-wrapper" style={{ maxWidth: "1400px", margin: "0 auto" }}>
-          <div style={{ padding: "40px", backgroundColor: "#fff" }}>
-            <h2 style={{ fontSize: "2rem", marginBottom: "20px" }}>Can we create something beautiful?</h2>
-            <div className="layout-split-1-3">
-              <div className="col-1" style={{ flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start" }}>
-                <h3 style={{ fontSize: "1.5rem", marginBottom: "20px" }}>Tessa Newbacher</h3>
-                <p><strong>Senior Consultant & Developer | 10+ Years Experience</strong></p>
-                <p>
-                  I partner with companies to turn complex problems into elegant, scalable digital solutions. From strategic planning and UX design to full-stack development, I deliver end-to-end impact.
-                </p>
-                <ul style={{ listStyle: "none", padding: 0, margin: "20px 0" }}>
-                  <li style={{ marginBottom: "10px" }}>US-based (EST Time Zone)</li>
-                  <li><a href="mailto:tessacharis@gmail.com" style={{ textDecoration: "underline", color: "#320b86" }}>tessacharis@gmail.com</a></li>
-                </ul>
-                <Link to="/help" className="button-primary" style={{ marginTop: "10px", width: "100%", textAlign: "center", boxSizing: "border-box" }}>
-                  Book a Consultation
-                </Link>
-              </div>
-
-              <div className="col-2">
-
-                <div className="links-list" style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-                  <Link to="/blog" style={{ padding: "20px", border: "3px solid #AAEA01", textDecoration: "none", color: "#320b86", fontWeight: "bold", backgroundColor: "#f9f9f9", transition: "0.2s ease" }} className="cta-link-item">
-                    View All Blog Posts & Resources
-                  </Link>
-                  <Link to="/work/mentorcliq" style={{ padding: "20px", border: "3px solid #AAEA01", textDecoration: "none", color: "#320b86", fontWeight: "bold", backgroundColor: "#f9f9f9", transition: "0.2s ease" }} className="cta-link-item">
-                    MentorcliQ Case Study: Contributed to 4x revenue growth over 5 years
-                  </Link>
-                  <Link to="/work/wia-dcc" style={{ padding: "20px", border: "3px solid #AAEA01", textDecoration: "none", color: "#320b86", fontWeight: "bold", backgroundColor: "#f9f9f9", transition: "0.2s ease" }} className="cta-link-item">
-                    Women in Analytics Case Study: Decreased overall bounce rate by 30%
-                  </Link>
-                  <Link to="/work/uhm" style={{ padding: "20px", border: "3px solid #AAEA01", textDecoration: "none", color: "#320b86", fontWeight: "bold", backgroundColor: "#f9f9f9", transition: "0.2s ease" }} className="cta-link-item">
-                    Union Home Mortgage Case Study: Creating a design system from disjointed websites and products
-                  </Link>
-                </div>
-              </div>
-            </div>
+              ))
+            ) : (
+              <RetroLoader message="Loading Recent Posts..." />
+            )}
           </div>
         </div>
       </section>

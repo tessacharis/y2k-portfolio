@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Outlet, Link, useNavigate, useLocation } from "react-router-dom";
 import ReactGA from "react-ga4";
 import logo from "../assets/logo.svg";
+import sunIcon from "../assets/sun-light-mode.gif";
+import moonIcon from "../assets/moon-stars-dark-mode.gif";
+import { CallToAction } from "../components/CallToAction.js";
 import "../styles/header.scss";
 import "../styles/navigation.scss";
 
@@ -14,13 +17,55 @@ const Layout = () => {
 
   // Set Time
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [greeting, setGreeting] = useState("");
+
+  // Theme state
+  const [theme, setTheme] = useState("light");
+
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
+    // Initial theme calculation
+    const savedTheme = localStorage.getItem("theme");
+    let initialTheme = "light";
+
+    if (savedTheme) {
+      initialTheme = savedTheme;
+    } else {
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      // If no explicit preference, defaults to time of day
+      if (prefersDark) {
+        initialTheme = "dark";
+      } else {
+        const hours = new Date().getHours();
+        const isNight = hours < 6 || hours >= 18;
+        initialTheme = isNight ? "dark" : "light";
+      }
+    }
+
+    setTheme(initialTheme);
+    document.documentElement.setAttribute("data-theme", initialTheme);
+
+    const updateTimeAndGreeting = () => {
+      const now = new Date();
+      setCurrentTime(now);
+
+      const hours = now.getHours();
+      if (hours >= 5 && hours < 12) setGreeting("Good Morning");
+      else if (hours >= 12 && hours < 18) setGreeting("Good Afternoon");
+      else setGreeting("Good Night");
+    };
+
+    updateTimeAndGreeting();
+    const intervalId = setInterval(updateTimeAndGreeting, 1000);
 
     return () => clearInterval(intervalId);
   }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    document.documentElement.setAttribute("data-theme", newTheme);
+  };
 
   // Mobile Menu Button
   const [showMenu, setShowMenu] = useState(false);
@@ -29,7 +74,7 @@ const Layout = () => {
     <div className="container">
       <header class="App-header">
         <nav aria-label="Main Navigation">
-          <a className="visually-hidden" href="#main">
+          <a className="skip-to-content" href="#main">
             Skip to content
           </a>
           <Link to="/" class="logo-link" onClick={() => setShowMenu(!showMenu)}>
@@ -96,13 +141,26 @@ const Layout = () => {
             </li>
           </ul>
         </nav>
-        <div className="time">
-          <p>{currentTime.toLocaleTimeString()}</p>
+        <div className="time time-container">
+          <p>{greeting}, it's {currentTime.toLocaleTimeString()}</p>
+          <button
+            className="theme-toggle-btn"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          >
+            {theme === "dark" ? (
+              <img src={moonIcon} alt="" className="theme-toggle-icon" aria-hidden="true" />
+            ) : (
+              <img src={sunIcon} alt="" className="theme-toggle-icon" aria-hidden="true" />
+            )}
+          </button>
         </div>
       </header>
       <main className="main" id="main">
         <Outlet />
       </main>
+      {location.pathname !== "/help" && <CallToAction />}
       <footer>
         <div className="footer-content">
           <Link to="/" class="logo-link">

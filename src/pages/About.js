@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import headshot from "../assets/tessa-newbacher-headshot.jpg";
 import hello from "../assets/hello.png";
 import "../styles/home.scss"; // Reuse homepage styles for consistent layout logic
+import "../styles/about.scss";
 
 const About = () => {
   const container = useRef();
@@ -20,7 +21,7 @@ const About = () => {
   }, { scope: container });
 
   return (
-    <div className="home-page-content" ref={container} style={{ paddingBottom: "0px" }}>
+    <div className="home-page-content about-page-content" ref={container}>
 
       <section aria-label="hero-title" className="hero hero-about">
         <div className="hero-content-container">
@@ -39,7 +40,7 @@ const About = () => {
             </Link>
           </div>
         </div>
-        <div aria-label="about-me" className="window-container" style={{ marginTop: "40px" }}>
+        <div aria-label="about-me" className="window-container about-me-window">
           <div className="window-content">
             <div className="window-content-container">
 
@@ -58,7 +59,7 @@ const About = () => {
                 </div>
 
                 <div className="col-2 about-me-content-container">
-                  <h2 style={{ fontSize: "1.8rem", marginBottom: "15px", color: "#320b86" }}>Senior UI/UX Designer & Front-End Developer</h2>
+                  <h2>Senior UI/UX Designer & Front-End Developer</h2>
                   <p>
                     I'm a seasoned designer and developer with over <strong>10 years of expertise crafting digital experiences</strong> that drive real business results. Throughout my career, I've lived at the intersection of design, technology, and strategy, specializing in building products that are beautiful, intuitive, and highly functional.
                   </p>
@@ -76,19 +77,12 @@ const About = () => {
         </div>
 
         {/* Tool Stack Section */}
-        <div style={{ maxWidth: "1400px", margin: "80px auto" }}>
+        <div className="tool-stack-section">
           <div>
-            <h2 style={{ fontSize: "2.5rem", textAlign: "center", marginBottom: "30px", color: "#320b86" }}>
+            <h2 className="tool-stack-heading">
               The Tool Stack
             </h2>
-            <div style={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              gap: "15px",
-              maxWidth: "1000px",
-              margin: "0 auto"
-            }}>
+            <div className="tool-stack-grid">
               {[
                 "HTML, CSS, JS",
                 "React.js",
@@ -114,14 +108,7 @@ const About = () => {
                 "Content Strategy + SEO",
                 "Leadership + Mentorship"
               ].map((skill, index) => (
-                <span key={index} style={{
-                  padding: "10px 20px",
-                  border: "3px solid #320b86",
-                  boxShadow: "4px 4px 0px #AAEA01",
-                  backgroundColor: "#fff",
-                  fontWeight: "bold",
-                  color: "#320b86",
-                }}>
+                <span key={index} className="tool-stack-item">
                   {skill}
                 </span>
               ))}
@@ -131,101 +118,59 @@ const About = () => {
       </section>
 
       {/* Success Metrics Section */}
-      <section aria-label="success-metrics" className="services-section" style={{ padding: "80px 20px" }}>
+      <section aria-label="success-metrics" className="services-section success-metrics-section">
         <div className="services-content-wrapper">
-          <h2 className="services-heading" style={{ fontSize: "2.5rem" }}>Proven Results & Success Metrics</h2>
-          <p style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center", fontSize: "1.2rem" }}>
+          <h2 className="services-heading success-metrics-heading">Proven Results & Success Metrics</h2>
+          <p className="success-metrics-description">
             Design and development are only as good as the impact they generate. Here are some of the measurable outcomes I've delivered for my clients.
           </p>
-          <div className="services-grid" style={{ marginTop: "40px" }}>
+          <div className="services-grid success-metrics-grid">
 
-            <div className="service-card" style={{ padding: "30px", backgroundColor: "#fff", display: "flex", flexDirection: "column", gap: "10px" }}>
-              <div className="service-card-header" style={{ borderBottom: "none", paddingBottom: "0px", justifyContent: "flex-start" }}>
-                <span style={{ fontSize: "3rem", color: "#FF007F", fontWeight: "900", lineHeight: "1" }}>4x</span>
+            <div className="service-card success-metrics-card">
+              <div className="service-card-header success-metrics-card-header">
+                <span className="success-metrics-number">4x</span>
               </div>
-              <div className="service-card-body" style={{ padding: "0px" }}>
-                <h3 style={{ fontSize: "1.4rem", color: "#320b86", margin: "10px 0" }}>Revenue Growth at MentorcliQ</h3>
+              <div className="service-card-body success-metrics-card-body">
+                <h3 className="success-metrics-card-title">Revenue Growth at MentorcliQ</h3>
                 <p>
                   Contributed to sustainable ARR growth over 5 years by implementing scalable UX processes and design systems that improved software adoptability for global enterprises.
                 </p>
               </div>
-              <Link to="/work/mentorcliq" className="button-primary" style={{ marginTop: "10px", width: "100%", textAlign: "center", boxSizing: "border-box" }}>
+              <Link to="/work/mentorcliq" className="button-primary success-metrics-button">
                 View Project
               </Link>
             </div>
 
-            <div className="service-card" style={{ padding: "30px", backgroundColor: "#fff", display: "flex", flexDirection: "column", gap: "10px" }}>
-              <div className="service-card-header" style={{ borderBottom: "none", paddingBottom: "0px", justifyContent: "flex-start" }}>
-                <span style={{ fontSize: "3rem", color: "#FF007F", fontWeight: "900", lineHeight: "1" }}>+30%</span>
+            <div className="service-card success-metrics-card">
+              <div className="service-card-header success-metrics-card-header">
+                <span className="success-metrics-number">+30%</span>
               </div>
-              <div className="service-card-body" style={{ padding: "0px" }}>
-                <h3 style={{ fontSize: "1.4rem", color: "#320b86", margin: "10px 0" }}>Engagement Rate for WIA</h3>
+              <div className="service-card-body success-metrics-card-body">
+                <h3 className="success-metrics-card-title">Engagement Rate for WIA</h3>
                 <p>
                   Restructured site architecture and optimized responsive web designs for multiple heavily trafficked conference sites, significantly improving memberships and ticket sales.
                 </p>
               </div>
-              <Link to="/work/wia-dcc" className="button-primary" style={{ marginTop: "10px", width: "100%", textAlign: "center", boxSizing: "border-box" }}>
+              <Link to="/work/wia-dcc" className="button-primary success-metrics-button">
                 View Project
               </Link>
             </div>
 
-            <div className="service-card" style={{ padding: "30px", backgroundColor: "#fff", display: "flex", flexDirection: "column", gap: "10px" }}>
-              <div className="service-card-header" style={{ borderBottom: "none", paddingBottom: "0px", justifyContent: "flex-start" }}>
-                <span style={{ fontSize: "3rem", color: "#FF007F", fontWeight: "900", lineHeight: "1" }}>+50%</span>
+            <div className="service-card success-metrics-card">
+              <div className="service-card-header success-metrics-card-header">
+                <span className="success-metrics-number">+50%</span>
               </div>
-              <div className="service-card-body" style={{ padding: "0px" }}>
-                <h3 style={{ fontSize: "1.4rem", color: "#320b86", margin: "10px 0" }}>Development Speed at UHM</h3>
+              <div className="service-card-body success-metrics-card-body">
+                <h3 className="success-metrics-card-title">Development Speed at UHM</h3>
                 <p>
                   Created and deployed an internal design system that standardized UI components cross-brand, drastically reducing development and QA time on all subsequent projects.
                 </p>
               </div>
-              <Link to="/work/uhm" className="button-primary" style={{ marginTop: "10px", width: "100%", textAlign: "center", boxSizing: "border-box" }}>
+              <Link to="/work/uhm" className="button-primary success-metrics-button">
                 View Project
               </Link>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA identical to the Homepage */}
-      <section aria-label="call-to-action" className="cta-section" style={{ padding: "80px 20px" }}>
-        <div className="cta-content-wrapper" style={{ maxWidth: "1400px", margin: "0 auto" }}>
-          <div style={{ padding: "40px", backgroundColor: "#fff", boxShadow: "5px 5px 0px #000", border: "5px solid #000" }}>
-            <h2 style={{ fontSize: "2rem", marginBottom: "20px" }}>Can we create something beautiful?</h2>
-            <div className="layout-split-1-3">
-              <div className="col-1" style={{ flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-start" }}>
-                <h3 style={{ fontSize: "1.5rem", marginBottom: "20px" }}>Tessa Newbacher</h3>
-                <p><strong>Senior Consultant & Developer | 10+ Years Experience</strong></p>
-                <p>
-                  I partner with companies to turn complex problems into elegant, scalable digital solutions. From strategic planning and UX design to full-stack development, I deliver end-to-end impact.
-                </p>
-                <ul style={{ listStyle: "none", padding: 0, margin: "20px 0" }}>
-                  <li style={{ marginBottom: "10px" }}>US-based (EST Time Zone)</li>
-                  <li><a href="mailto:tessacharis@gmail.com" style={{ textDecoration: "underline", color: "#320b86" }}>tessacharis@gmail.com</a></li>
-                </ul>
-                <Link to="/help" className="button-primary" style={{ marginTop: "10px", width: "100%", textAlign: "center", boxSizing: "border-box" }}>
-                  Book a Consultation
-                </Link>
-              </div>
-
-              <div className="col-2">
-                <div className="links-list" style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-                  <Link to="/blog" style={{ padding: "20px", border: "3px solid #AAEA01", textDecoration: "none", color: "#320b86", fontWeight: "bold", backgroundColor: "#f9f9f9", transition: "0.2s ease" }} className="cta-link-item">
-                    View All Blog Posts & Resources
-                  </Link>
-                  <Link to="/work/mentorcliq" style={{ padding: "20px", border: "3px solid #AAEA01", textDecoration: "none", color: "#320b86", fontWeight: "bold", backgroundColor: "#f9f9f9", transition: "0.2s ease" }} className="cta-link-item">
-                    MentorcliQ Case Study: Contributed to 4x revenue growth over 5 years
-                  </Link>
-                  <Link to="/work/wia-dcc" style={{ padding: "20px", border: "3px solid #AAEA01", textDecoration: "none", color: "#320b86", fontWeight: "bold", backgroundColor: "#f9f9f9", transition: "0.2s ease" }} className="cta-link-item">
-                    Women in Analytics Case Study: Decreased overall bounce rate by 30%
-                  </Link>
-                  <Link to="/work/uhm" style={{ padding: "20px", border: "3px solid #AAEA01", textDecoration: "none", color: "#320b86", fontWeight: "bold", backgroundColor: "#f9f9f9", transition: "0.2s ease" }} className="cta-link-item">
-                    Union Home Mortgage Case Study: Creating a design system from disjointed websites and products
-                  </Link>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

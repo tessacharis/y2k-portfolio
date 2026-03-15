@@ -48,8 +48,8 @@
   align-items: center;
   padding: 2rem;
   background-image:
-    linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%),
-    linear-gradient(rgba($electric-indigo, 0.4) 0%, rgba($light-blue, 0.8) 100%),
+    linear-gradient(180deg, $white 0%, $white-2 50%, $white-3 100%),
+    linear-gradient($light-blue-2 0%, $light-blue-2 100%),
     url("../assets/backgroud-artwork.png");
   background-size: cover;
   background-position: center;
@@ -92,7 +92,8 @@
 
 .hero.hero-about {
   background-image:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.9) 70%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(180deg, $white 0%, $white-2 50%, $white-3 100%),
+    linear-gradient($light-blue-2 0%, $light-blue-2 100%),
     url("../assets/computer-edit.png");
 }
 
@@ -228,7 +229,7 @@
 .blogs-section {
   width: 100%;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: $white-4;
   padding: 120px 20px;
   box-sizing: border-box;
   max-width: none;
@@ -335,7 +336,7 @@
 
         &::after {
           content: '✔';
-          color: $purple-dark;
+          color: $electric-indigo;
           font-size: 20px;
         }
       }
@@ -352,7 +353,7 @@
   }
 
   &.inverted {
-    background-color: $purple-dark;
+    background-color: $white-4;
     border-color: $purple-dark;
     box-shadow: 6px 6px 0px $neon-green;
 
@@ -370,9 +371,6 @@
       }
     }
 
-    .service-card-body {
-      color: $white;
-    }
   }
 
   .service-card-body {
@@ -388,6 +386,7 @@
       font-size: 1rem;
       line-height: 1.5;
       font-family: inherit;
+      color: $dark-gray;
     }
   }
 }

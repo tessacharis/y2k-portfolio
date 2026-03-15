@@ -1,0 +1,100 @@
+@import "colors.scss";
+
+// About page specific styles
+.about-page-content {
+  padding-bottom: 0px;
+}
+
+.about-me-window {
+  margin-top: 40px;
+}
+
+// Tool Stack Section
+.tool-stack-section {
+  max-width: 1400px;
+  margin: 80px auto;
+
+  .tool-stack-heading {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: $electric-indigo;
+  }
+
+  .tool-stack-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .tool-stack-item {
+    padding: 10px 20px;
+    border: 3px solid $electric-indigo;
+    box-shadow: 4px 4px 0px $neon-green;
+    background-color: $white;
+    font-weight: bold;
+    color: $electric-indigo;
+  }
+}
+
+// Success Metrics Section
+.success-metrics-section {
+  padding: 80px 20px;
+
+  .success-metrics-heading {
+    font-size: 2.5rem;
+  }
+
+  .success-metrics-description {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  .success-metrics-grid {
+    margin-top: 40px;
+  }
+  
+  // Specific styling augmenting .service-card
+  .success-metrics-card {
+    padding: 30px;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .success-metrics-card-header {
+      border-bottom: none;
+      padding-bottom: 0px;
+      justify-content: flex-start;
+    }
+
+    .success-metrics-number {
+      font-size: 3rem;
+      color: $pink;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .success-metrics-card-body {
+      padding: 0px;
+    }
+
+    .success-metrics-card-title {
+      font-size: 1.4rem;
+      color: $electric-indigo;
+      margin: 10px 0;
+    }
+
+    .success-metrics-button {
+      margin-top: 10px;
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+    }
+  }
+}

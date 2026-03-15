@@ -32,7 +32,7 @@ const Work = () => {
                 over five years.
               </p>
             </div>
-            <Link to="/work/mentorcliq" className="button-primary">
+            <Link to="/work/mentorcliq" className="button-primary" style={{ marginTop: "10px", width: "100%", textAlign: "center" }}>
               Read Case Study
             </Link>
           </div>
@@ -56,7 +56,7 @@ const Work = () => {
                 two sites decreased overall bounce rate by 30%.
               </p>
             </div>
-            <Link to="/work/wia-dcc" className="button-primary">
+            <Link to="/work/wia-dcc" className="button-primary" style={{ marginTop: "10px", width: "100%", textAlign: "center" }}>
               Read Case Study
             </Link>
           </div>
@@ -73,7 +73,7 @@ const Work = () => {
               <h2>Union Home Mortgage & Other Brands</h2>
               <h3>Responsive Website Design & Interal Product Development</h3>
             </div>
-            <Link to="/work/uhm" className="button-primary">
+            <Link to="/work/uhm" className="button-primary" style={{ marginTop: "10px", width: "100%", textAlign: "center" }}>
               Read Case Study
             </Link>
           </div>
@@ -86,34 +86,40 @@ const Work = () => {
       </div>
       <div className="grid-container">
         <div className="window-content window-content__static">
-          <div className="window-content-container" style={{ textAlign: "center", padding: "20px", margin: "20px" }}>
-            <img
-              className="portfolio-item-image"
-              src={AlignAI}
-              alt="AlignAI's website on large monitor, laptop and mobile"
-            />
-            <h2>AlignAI</h2>
-            <h3>Responsive Website Design with Webflow, 2023-2024</h3>
+          <div className="window-content-container">
+            <div className="window-description-container">
+              <img
+                className="portfolio-item-image"
+                src={AlignAI}
+                alt="AlignAI's website on large monitor, laptop and mobile"
+              />
+              <h2>AlignAI</h2>
+              <h3>Responsive Website Design with Webflow, 2023-2024</h3>
+            </div>
           </div>
         </div>
 
         <div className="window-content window-content__static">
           <div className="window-content-container">
-            <img
-              className="portfolio-item-image"
-              src={MatrixTradeInstitute}
-              alt="Matrix Trade Institute Website"
-            />
-            <h2>Matrix Trade Institute</h2>
-            <h3>Responsive Web Design with Umbraco CMS, 2019-2021</h3>
+            <div className="window-description-container">
+              <img
+                className="portfolio-item-image"
+                src={MatrixTradeInstitute}
+                alt="Matrix Trade Institute Website"
+              />
+              <h2>Matrix Trade Institute</h2>
+              <h3>Responsive Web Design with Umbraco CMS, 2019-2021</h3>
+            </div>
           </div>
         </div>
 
         <div className="window-content window-content__static">
           <div className="window-content-container">
-            <img className="portfolio-item-image" src={CommandPlastic} alt="" />
-            <h2>Command Plastic</h2>
-            <h3>Responsive Website Design with Wordpress, 2018</h3>
+            <div className="window-description-container">
+              <img className="portfolio-item-image" src={CommandPlastic} alt="Command Plastic's Website" />
+              <h2>Command Plastic</h2>
+              <h3>Responsive Website Design with Wordpress, 2018</h3>
+            </div>
           </div>
         </div>
       </div>
