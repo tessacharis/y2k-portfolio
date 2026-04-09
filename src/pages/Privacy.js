@@ -8,7 +8,7 @@ const Privacy = () => {
 
     return (
         <div className="window-container" style={{ maxWidth: "800px", margin: "100px auto" }}>
-            <div className="window-content" style={{ padding: "40px", backgroundColor: "#fff" }}>
+            <div className="window-content" style={{ padding: "40px" }}>
                 <h1>Privacy Policy</h1>
                 <br />
                 <p><strong>Last Updated: {new Date().toLocaleDateString()}</strong></p>

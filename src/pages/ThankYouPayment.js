@@ -7,14 +7,14 @@ const ThankYou = () => {
     <section>
       <div className="window-content" style={{ margin: "100px auto" }}>
         <div className="window-content-container">
-          <img src={thankyou} alt="Thank you!" />
           <h1>
-            Thank you for your message!
+            It's been a pleasure doing business.
           </h1>
+          <h2>Thank you for your payment.</h2>
           <p>
-            Keep your eyes peeled to your inbox - I'll be reaching out to learn more as soon as I can!
+            If you experienced any trouble with the payment portal, require additional help, or want to continue our work together, please feel free to reach out to me at <a href="mailto:tessacharis@gmail.com">tessacharis@gmail.com</a>
           </p>
-          <Link to="/" className="button">&#8592; Back to Home</Link>
+          <Link to="/" className="button">Back to Home</Link>
         </div>
       </div>
     </section>
