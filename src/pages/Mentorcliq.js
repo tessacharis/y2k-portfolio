@@ -30,7 +30,7 @@ const MentorcliQ = () => {
                 <div class="square"></div>
                 <div class="square"></div>
                 <div class="square"></div>
-                <h2>The Company</h2>
+                <h2>About MentorcliQ</h2>
               </div>
               <div class="window-content-small-container">
                 <p>
@@ -63,7 +63,7 @@ const MentorcliQ = () => {
                 <div class="square"></div>
                 <div class="square"></div>
                 <div class="square"></div>
-                <h2>The Software</h2>
+                <h2>The Product</h2>
               </div>
               <div
                 class="window-content-small-container"
