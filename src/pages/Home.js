@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { DraggableWindow } from "../components/DraggableWindow";
-import { Marquee } from "../components/Marquee.js";
 import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,6 +10,7 @@ import headshot from "../assets/tessa-newbacher-headshot.jpg";
 import hello from "../assets/hello.png";
 import { RetroLoader } from "../components/RetroLoader.js";
 import "../styles/home.scss";
+import "../styles/draggable.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -150,7 +149,7 @@ const Home = () => {
                     Often in my career I've been called a unicorn. A UX generalist who can strategically plan the information architecture, conversion funnels, design and brand, while bringing it all to life with code while maintiaining and optimizing it post-production.
                   </p>
                   <p>
-                    I've spent over a decade of my career living at the intersection of digital design and computer science since the MySpace days of the early 2000s. At every company I've worked with, my job was to see the bigger picture of our brand and digital experience and put it together piece-by-piece. First in-house UX designer at 3000+ person fintech company. Design system builder. Web developer. Strategist.
+                    I've spent over a decade of my career living at the intersection of digital design and computer science. At every company I've worked with, my job was to see the bigger picture of our brand and digital experience and put it together piece-by-piece. First in-house UX designer at 3000+ person fintech company. Founding Designer for Mentoring/HR B2B SaaS. Design system builder. Web developer. Strategist.
                   </p>
                   <p>
                     When you work with me, you get someone who speaks every language in the room: design, development, user psychology, and business outcomes. That means thoughtful decisions, attention-to-detail in every aspect of the work, and a lot less on your shoulders.

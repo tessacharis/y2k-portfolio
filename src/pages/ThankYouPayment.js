@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import thankyou from "../assets/thankyou.png";
 
 const ThankYou = () => {
   return (
@@ -8,7 +7,7 @@ const ThankYou = () => {
       <div className="window-content" style={{ margin: "100px auto" }}>
         <div className="window-content-container">
           <h1>
-            It's been a pleasure doing business.
+            It's been a pleasure doing business with you.
           </h1>
           <h2>Thank you for your payment.</h2>
           <p>

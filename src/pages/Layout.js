@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Outlet, Link, useNavigate, useLocation } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import ReactGA from "react-ga4";
 import logo from "../assets/logo.svg";
 import sunIcon from "../assets/sun-light-mode.gif";

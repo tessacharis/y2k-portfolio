@@ -1,5 +1,6 @@
 import { CursorifyProvider } from "@cursorify/react";
 import CustomCursor from "./components/CustomCursor.js";
+import { isMobile, isTablet } from "react-device-detect";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout.js";
 import About from "./pages/About.js";
@@ -19,28 +20,38 @@ import BlogDetails from "./pages/blog/BlogDetails.js";
 import "./styles/app.scss";
 
 export default function App() {
-  return (
-    <CursorifyProvider cursor={<CustomCursor />}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/work" element={<Work />} />
-            <Route path="/work/mentorcliq" element={<MentorcliQ />} />
-            <Route path="/work/wia-dcc" element={<WIADCC />} />
-            <Route path="/work/uhm" element={<UHM />} />
-            <Route path="/delete" element={<Delete />} />
-            <Route path="/help" element={<Help />} />
-            <Route path="/blog" element={<BlogList />} />
-            <Route path="/blog/:slug" element={<BlogDetails />} />
-            <Route path="/thank-you" element={<ThankYou />} />
-            <Route path="/thank-you-payment" element={<ThankYouPayment />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="*" element={<NoPage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </CursorifyProvider>
+  const isDesktop = !isMobile && !isTablet;
+
+  const appContent = (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/work" element={<Work />} />
+          <Route path="/work/mentorcliq" element={<MentorcliQ />} />
+          <Route path="/work/wia-dcc" element={<WIADCC />} />
+          <Route path="/work/uhm" element={<UHM />} />
+          <Route path="/delete" element={<Delete />} />
+          <Route path="/help" element={<Help />} />
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/:slug" element={<BlogDetails />} />
+          <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/thank-you-payment" element={<ThankYouPayment />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
+
+  if (isDesktop) {
+    return (
+      <CursorifyProvider cursor={<CustomCursor />} breakpoint={1024}>
+        {appContent}
+      </CursorifyProvider>
+    );
+  }
+
+  return appContent;
 }
