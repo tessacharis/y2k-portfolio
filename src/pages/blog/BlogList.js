@@ -11,7 +11,7 @@ const BlogList = () => {
   useEffect(() => {
     const getAllEntries = async () => {
       try {
-        const query = `*[_type == "post"]{
+        const query = `*[_type == "post"] | order(publishDate desc){
           _id,
           headline,
           slug,
