@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# 👾 Tessa Newbacher — Y2K Retro Portfolio & Blog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the official repository for **Tessa Newbacher's** personal portfolio and blog. 
 
-## Available Scripts
+Tessa is a **Senior UI/UX Designer & Front-End Developer** with 10+ years of experience crafting interactive digital products. This portfolio features a high-fidelity **Y2K / retro computing aesthetic** styled with custom windows, nostalgic loading indicators, custom GSAP-driven cursor trails, and a dynamic Sanity-powered blog.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Tech Stack & Core Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React (v19) & React Router (v7)
+- **Styling**: Sass (SCSS) with custom variables & retro components
+- **Animations**: GSAP (GreenSock) for high-performance physics and custom glitch typography animations
+- **Interactions**: `@dnd-kit/core` for draggable desktop window components
+- **Custom Cursor**: `@cursorify/react` configured to show only on desktop (automatically disabled on mobile/iPad/tablet or small viewports `< 1024px` for optimal touch experiences)
+- **CMS**: Sanity (v3) for dynamic blog content administration
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ Local Development & Scripts
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This repository is split into two main parts:
+1. **Frontend Application**: Located in the root directory.
+2. **Sanity Studio CMS**: Located inside the `studio/` directory.
 
-### `npm run build`
+### 1. Frontend Setup (Root)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Run the following commands in the root directory to set up the frontend:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+# Install dependencies
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Run application in development mode (http://localhost:3000)
+npm start
 
-### `npm run eject`
+# Run unit tests
+npm test
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Build the optimized production bundle
+npm run build
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Eject configuration (Not recommended)
+npm run eject
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2. Sanity Studio Setup (`/studio`)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Run the following commands inside the `studio/` directory to run the CMS:
 
-## Learn More
+```bash
+# Navigate to the studio directory
+cd studio
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Install studio dependencies
+npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Run Sanity Studio locally (http://localhost:3333)
+npm run dev
 
-### Code Splitting
+# Alternative start command
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Build the studio for static hosting
+npm run build
 
-### Analyzing the Bundle Size
+# Deploy the studio to Sanity's cloud hosting
+npm run deploy
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Deploy GraphQL schema (if needed)
+npm run deploy-graphql
+```
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## ✍️ Managing the Blog (Sanity CMS)
 
-### Advanced Configuration
+The blog runs on **Sanity.io** using the Project ID `hdprq3kf` and the `production` dataset.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Blog Post Schema Types
 
-### Deployment
+The `post` document schema contains the following fields for managing articles:
+- **Headline**: The article's main heading.
+- **Slug**: Generated automatically from the headline for clean URLs.
+- **Publish Date**: The post date shown to readers.
+- **Featured Image**: High-res image with hotspot cropping enabled.
+- **Summary**: A rich-text excerpt (Portable Text) shown on the blog list page.
+- **Main Content**: The body text of the article with support for inline images.
+- **Sidebar Content** *(Optional)*: Additional rich-text displayed in a sidebar widget.
+- **Embedded HTML** *(Optional)*: Raw HTML for dynamic forms, scripts, or embeds.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### How to Log In & Author Content
 
-### `npm run build` fails to minify
+For authors and content administrators:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Locally (Development)**:
+   - Run `npm run dev` in the `studio/` directory.
+   - Open `http://localhost:3333` in your browser.
+   - Log in using your registered Sanity account (Google, GitHub, or email/password).
+
+2. **Cloud Deployed Studio**:
+   - Access the deployed Studio URL (e.g. `https://portfolio-studio.sanity.studio` or your custom domain, configured after running `npm run deploy`).
+   - Log in with your credentials.
+
+3. **Managing Team Access**:
+   - Go to the [Sanity Management Console](https://www.sanity.io/manage).
+   - Sign in and select Project ID **`hdprq3kf`**.
+   - Navigate to the **Members** tab to invite new authors or editors to collaborate.
