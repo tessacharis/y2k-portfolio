@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as THREE from "three";
-import { useGSAP } from "@gsap/react";
 
 // Asset Imports
 import artBeau from "../assets/art-gallery/Pets - Beau.png";
@@ -12,11 +11,11 @@ import artSophie from "../assets/art-gallery/Pets - Sophie.png";
 import artPirateExc from "../assets/art-gallery/Pirate Excercise.png";
 import artPirateSticker from "../assets/art-gallery/Pirate Night - Sticker.png";
 import artAbstractCats from "../assets/art-gallery/Abstract Cats.png";
-import artButterfly from "../assets/art-gallery/Butterfly.gif";
 import artFloatingIslands from "../assets/art-gallery/Floating Islands In Space.png";
-import artMushrooms from "../assets/art-gallery/Rainy-Trippy-Mushrooms.png";
 import artBeach from "../assets/art-gallery/Sitting At the Beach.png";
 import artTeaTime from "../assets/art-gallery/Tea Time.png";
+import artDigitalGallery from "../assets/art-gallery/tessa-newbacher-digital-gallery.png";
+
 
 // SCSS imports (handled globally or via page)
 import "../styles/artGallery.scss";
@@ -25,13 +24,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Categories
 const CATEGORIES = {
-  PETS: "PETS.DLL - Virtual Companions",
-  PIRATE: "PIRATES.SYS - Pirate Night",
-  OTHERS: "OTHERS.DAT - Experimental Systems",
+  PETS: "PETS - Beloved Companions",
+  PIRATE: "COMMISSIONED - Pirate Night",
+  OTHERS: "DIGITAL.EXE - Experimental Systems",
 };
 
 // Artwork Data
 const ARTWORK = [
+  // Hero Cover Image (Not in main category flow)
+  {
+    id: "hero-cover",
+    title: "Tessa's Digital Gallery",
+    filename: "tessa-newbacher-digital-gallery.png",
+    category: "HERO",
+    src: artDigitalGallery,
+    themeColor: "#57E2EC", // Light Blue/Cyan
+    description: "Digital gallery cover banner.",
+    resolution: "2048x2048",
+  },
   // 1. Pets (First)
   {
     id: "pets-beau",
@@ -41,17 +51,17 @@ const ARTWORK = [
     src: artBeau,
     themeColor: "#AAEA01", // Neon Green
     description: "A digital portrait of Beau enjoying the beach, his favorite place for eternity across the rainbow bridge.",
-    resolution: "1024x1024",
+    resolution: "2752x2064",
   },
   {
     id: "pets-cat",
-    title: "Vapor Cat",
-    filename: "Vapor_Cat.png",
+    title: "Grassy Cat",
+    filename: "Grassy_Cat.png",
     category: CATEGORIES.PETS,
     src: artCat,
     themeColor: "#FA0AED", // Neon Pink
     description: "A cat hiding in the grass, getting ready to pounce.",
-    resolution: "1280x960",
+    resolution: "2752x2064",
   },
   {
     id: "pets-leo",
@@ -61,7 +71,7 @@ const ARTWORK = [
     src: artLeo,
     themeColor: "#5515FE", // Electric Indigo
     description: "A portrait of Leo, dressed in a Hufflepuff themed cloak, stalking his prey in a dark forest cemetery, leaving behind the chaos he has caused because he's orange.",
-    resolution: "1024x1024",
+    resolution: "2064x2752",
   },
   {
     id: "pets-sophie",
@@ -71,7 +81,7 @@ const ARTWORK = [
     src: artSophie,
     themeColor: "#57E2EC", // Light Blue/Cyan
     description: "In loving memory of my dog Sophie, the sweetest pitbull I've ever met. She always stayed within the boundaries of the yard, even without a fence and loved wearing a fresh bandana.",
-    resolution: "1920x1080",
+    resolution: "6000x6000",
   },
   // 2. Pirate Night (Second)
   {
@@ -82,7 +92,7 @@ const ARTWORK = [
     src: artPirateSticker,
     themeColor: "#FA0AED", // Neon Pink
     description: "A custom sticker design for Pirate Night - an historical theme night at Market Garden Brewing hosted by Yorecraft Productions. The sticker features the night's musical performer with parrot on his shoulder playing a mandolin, classic Cleveland landmarks (Lorain Bridge), the skyline, a mermaid playing a harp with waves splashing around her, and psychedelic theme background.",
-    resolution: "800x800",
+    resolution: "1452x1122",
   },
   {
     id: "pirate-exercise",
@@ -92,7 +102,7 @@ const ARTWORK = [
     src: artPirateExc,
     themeColor: "#AAEA01", // Neon Green
     description: "A practice draft of a pirate with a parrot on his shoulder.",
-    resolution: "960x720",
+    resolution: "1452x1122",
   },
   // 3. Others (Third)
   {
@@ -102,18 +112,8 @@ const ARTWORK = [
     category: CATEGORIES.OTHERS,
     src: artAbstractCats,
     themeColor: "#5515FE", // Electric Indigo
-    description: "Black and white simple line drawings of cats in variou positions.",
-    resolution: "1024x1024",
-  },
-  {
-    id: "butterfly",
-    title: "Butterfly",
-    filename: "Butterfly.gif",
-    category: CATEGORIES.OTHERS,
-    src: artButterfly,
-    themeColor: "#57E2EC", // Light Blue/Cyan
-    description: "An animated GIF capturing the gentle loop of a butterfly flapping its wings.",
-    resolution: "500x500",
+    description: "Black and white simple line drawings of cats in various positions - sitting, stretching and laying down to sleep.",
+    resolution: "2064x2752",
   },
   {
     id: "floating-islands",
@@ -123,17 +123,7 @@ const ARTWORK = [
     src: artFloatingIslands,
     themeColor: "#FA0AED", // Neon Pink
     description: "A space scene with floating islands, the floating island in the focal point has a tall tree and roots covering it. Heavily inspirated by video games - from Final Fantasy to Zelda to Genshin Impact.",
-    resolution: "2048x1536",
-  },
-  {
-    id: "mushrooms",
-    title: "Trippy Mushrooms",
-    filename: "Mushrooms.png",
-    category: CATEGORIES.OTHERS,
-    src: artMushrooms,
-    themeColor: "#AAEA01", // Neon Green
-    description: "A rainy landscape scene with glowing, abstract, psychedelic mushrooms in the foreground.",
-    resolution: "1200x1200",
+    resolution: "2064x2752",
   },
   {
     id: "beach",
@@ -142,8 +132,8 @@ const ARTWORK = [
     category: CATEGORIES.OTHERS,
     src: artBeach,
     themeColor: "#5515FE", // Electric Indigo
-    description: "A tranquil illustration of a woman sitting on the beach at night - only lit up by a moon you can't see in frame.",
-    resolution: "1600x1200",
+    description: "A tranquil illustration of a woman sitting on the beach at night - only lit up by a moon you can barely see in frame.",
+    resolution: "4000x3000",
   },
   {
     id: "tea-time",
@@ -153,7 +143,7 @@ const ARTWORK = [
     src: artTeaTime,
     themeColor: "#57E2EC", // Light Blue/Cyan
     description: "Inspired by Studio Ghibli, a bear and an otter sit at a table with warm drinks in a forest setting.",
-    resolution: "1024x1024",
+    resolution: "2752x2064",
   },
 ];
 
@@ -269,6 +259,8 @@ export default function ArtGallery() {
     [CATEGORIES.OTHERS]: ARTWORK.filter((art) => art.category === CATEGORIES.OTHERS),
   };
 
+  const heroIndex = ARTWORK.findIndex((a) => a.id === "hero-cover");
+
   useEffect(() => {
     // Setup Three.js scene
     if (!canvasRef.current) return;
@@ -297,6 +289,8 @@ export default function ArtGallery() {
       });
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      THREE.ColorManagement.legacyMode = false;
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
       rendererRef.current = renderer;
     } catch (e) {
       console.warn("WebGL initialization failed, falling back to CSS layouts:", e);
@@ -312,6 +306,7 @@ export default function ArtGallery() {
     // Load textures and create meshes
     let loadedCount = 0;
     const textureLoader = new THREE.TextureLoader();
+    const triggers = [];
 
     ARTWORK.forEach((item, index) => {
       const imgEl = imageRefs.current[index];
@@ -327,7 +322,7 @@ export default function ArtGallery() {
           uResolution: { value: new THREE.Vector2(1, 1) },
           uContainerRes: { value: new THREE.Vector2(1, 1) },
           uProgress: { value: 0.0 },
-          uGridSize: { value: 25.0 },
+          uGridSize: { value: 30.0 }, // grid size of 30 columns for blocky pixel look
           uColor: { value: new THREE.Color(item.themeColor) },
         },
       });
@@ -345,10 +340,26 @@ export default function ArtGallery() {
       };
       meshObjects.push(meshObj);
 
+      // Create ScrollTrigger animation immediately on mount bound to the stable parent window frame
+      const anim = gsap.to(material.uniforms.uProgress, {
+        value: 1.0,
+        scrollTrigger: {
+          trigger: imgEl.closest(".y2k-window") || imgEl,
+          start: "top bottom-=100", // Start pixelation reveal when element is 100px inside viewport
+          end: "bottom top+=100",   // Reset when it leaves
+          toggleActions: "play reset restart reset",
+        },
+        duration: 1.6,
+        ease: "linear",
+      });
+      triggers.push(anim);
+
       // Async load texture
       textureLoader.load(
         item.src,
         (texture) => {
+          texture.colorSpace = THREE.LinearSRGBColorSpace;
+          texture.needsUpdate = true;
           material.uniforms.uTexture.value = texture;
           material.uniforms.uResolution.value.set(
             texture.image.naturalWidth,
@@ -363,7 +374,10 @@ export default function ArtGallery() {
           if (loadedCount === ARTWORK.length) {
             setWebglReady(true);
             // Trigger recalculation for all
-            setTimeout(handleResize, 100);
+            setTimeout(() => {
+              handleResize();
+              ScrollTrigger.refresh();
+            }, 100);
           }
         },
         undefined,
@@ -372,6 +386,10 @@ export default function ArtGallery() {
           loadedCount++;
           if (loadedCount === ARTWORK.length) {
             setWebglReady(true);
+            setTimeout(() => {
+              handleResize();
+              ScrollTrigger.refresh();
+            }, 100);
           }
         }
       );
@@ -413,6 +431,9 @@ export default function ArtGallery() {
       });
     };
 
+    // Calculate initial layout scaling
+    handleResize();
+
     window.addEventListener("resize", handleResize);
 
     // Animation Tick loop
@@ -436,6 +457,10 @@ export default function ArtGallery() {
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener("resize", handleResize);
+      triggers.forEach((anim) => {
+        anim.scrollTrigger?.kill();
+        anim.kill();
+      });
       meshObjects.forEach((obj) => {
         obj.mesh.geometry.dispose();
         obj.mesh.material.dispose();
@@ -445,29 +470,14 @@ export default function ArtGallery() {
     };
   }, [webglSupported]);
 
-  // Set up GSAP ScrollTriggers
-  useGSAP(
-    () => {
-      if (!webglReady || !webglSupported || meshObjectsRef.current.length === 0) return;
-
-      meshObjectsRef.current.forEach((obj) => {
-        gsap.to(obj.mesh.material.uniforms.uProgress, {
-          value: 1.0,
-          scrollTrigger: {
-            trigger: obj.domEl,
-            start: "top bottom-=80", // Reveal when element is mostly in view
-            end: "bottom top+=80",
-            toggleActions: "play reset restart reset",
-          },
-          duration: 1.2,
-          ease: "power2.out",
-        });
-      });
-
-      ScrollTrigger.refresh();
-    },
-    { scope: containerRef, dependencies: [webglReady, webglSupported] }
-  );
+  // Refresh ScrollTrigger when WebGL layout status updates
+  useEffect(() => {
+    if (webglReady) {
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 150);
+    }
+  }, [webglReady]);
 
   return (
     <div
@@ -497,18 +507,40 @@ export default function ArtGallery() {
               <button className="y2k-btn-close">X</button>
             </div>
           </div>
+
           <div className="y2k-window-body text-center hero-body">
-            <h1 className="neon-marquee font-pixel">TESSA'S_DIGITAL_ART_GALLERY.EXE</h1>
-            <p className="hero-subtitle font-pixel">
-              SYSTEM VERSION: 2026.05 // CREATED IN PROCREAT
-            </p>
-            <div className="system-status font-pixel">
-              <span className="status-indicator-dot blinking" />
-              <span>STATUS: INTERACTIVE_RENDERER_ACTIVE</span>
-              <span className="divider">|</span>
-              <span>ITEMS: {ARTWORK.length} ENGINES</span>
-              <span className="divider">|</span>
-              <span>THEME: NEON_Y2K</span>
+            <div className="hero-image-wrapper">
+              <div className="y2k-image-wrapper">
+                <img
+                  ref={(el) => (imageRefs.current[heroIndex] = el)}
+                  src={artDigitalGallery}
+                  alt="Tessa's Digital Gallery"
+                  className="gallery-image"
+                />
+                {!webglReady && webglSupported && (
+                  <div className="y2k-image-loader font-pixel">
+                    <span className="loader-spinner" />
+                    SHADERS_INIT...
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className="hero-content-wrapper">
+              <h1 className="neon-marquee font-pixel">TESSA'S DIGITAL ART GALLERY</h1>
+              <p className="hero-subtitle">
+                COPYRIGHT &copy; 2026 TESSA NEWBACHER
+              </p>
+              <p className="hero-subtitle">
+                ALL WORK CREATED IN PROCREATE
+              </p>
+              <div className="system-status font-pixel">
+                <span className="status-indicator-dot blinking" />
+                <span>SYSTEM VERSION: 2026.05</span>
+                <span className="divider">|</span>
+                <span>IMAGES: {ARTWORK.filter(a => a.category !== "HERO").length}</span>
+                <span className="divider">|</span>
+                <span>THEME: NEON_Y2K</span>
+              </div>
             </div>
           </div>
         </div>
@@ -524,11 +556,13 @@ export default function ArtGallery() {
               <h2>{categoryTitle}</h2>
               <div className="category-line" />
             </div>
-
             <div className="artwork-grid">
               {items.map((item) => {
                 // Find global index to map correct imageRef
                 const globalIndex = ARTWORK.findIndex((a) => a.id === item.id);
+                // Calculate dynamic aspect ratio from resolution string
+                const [w, h] = item.resolution.split("x").map(Number);
+                const aspect = w / h;
 
                 return (
                   <div
@@ -551,8 +585,7 @@ export default function ArtGallery() {
 
                     {/* Window Content */}
                     <div className="y2k-window-body">
-                      {/* Image Viewer Wrapper */}
-                      <div className="y2k-image-wrapper">
+                      <div className="y2k-image-wrapper" style={{ aspectRatio: aspect }}>
                         <img
                           ref={(el) => (imageRefs.current[globalIndex] = el)}
                           src={item.src}
@@ -574,26 +607,9 @@ export default function ArtGallery() {
                           <span className="y2k-category-badge">{item.title}</span>
                           <span className="y2k-res-badge">RES: {item.resolution}</span>
                         </div>
-                        <p className="y2k-description-text font-pixel">
+                        <p className="y2k-description-text">
                           {item.description}
                         </p>
-                      </div>
-
-                      {/* Window status footer bar */}
-                      <div className="y2k-window-footer font-pixel">
-                        <div className="footer-status-msg">
-                          <span className="blinking-dot" />
-                          <span>RENDER_OK</span>
-                        </div>
-                        <a
-                          href={item.src}
-                          download={item.filename}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="y2k-btn-download"
-                        >
-                          SAVE_AS.EXE
-                        </a>
                       </div>
                     </div>
                   </div>

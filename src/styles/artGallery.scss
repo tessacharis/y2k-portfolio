@@ -4,7 +4,7 @@
 .art-gallery-page {
   position: relative;
   min-height: 100vh;
-  padding: 100px 20px 80px 20px;
+  padding: 60px 20px 80px 20px;
   background-color: var(--white);
   color: var(--black);
   overflow-x: hidden;
@@ -31,10 +31,8 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(
-      rgba(18, 16, 16, 0) 50%, 
-      rgba(0, 0, 0, 0.1) 50%
-    );
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%,
+        rgba(0, 0, 0, 0.1) 50%);
     background-size: 100% 4px;
     z-index: 99; // below header, above canvas
     pointer-events: none;
@@ -47,7 +45,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: 
+    background:
       linear-gradient(90deg, rgba($electric-indigo, 0.03) 1px, transparent 1px),
       linear-gradient(rgba($electric-indigo, 0.03) 1px, transparent 1px);
     background-size: 40px 40px;
@@ -63,8 +61,53 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 4; // Above window backgrounds, below navigation headers (which are usually 100+)
+  z-index: 10; // Above window backgrounds and content, below navigation headers (which are 999+)
   pointer-events: none;
+}
+
+// Image Frame viewport (Shared between Hero and Cards)
+.y2k-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: auto;
+  background-color: #000;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  border: 3px inset #555;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.5s ease;
+    opacity: 1; // Default fallback visible
+  }
+
+  .y2k-image-loader {
+    position: absolute;
+    font-size: 0.75rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .loader-spinner {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+  }
 }
 
 // Y2K Windows Design System
@@ -74,9 +117,9 @@
   background-color: var(--gray);
   border: 3px solid;
   border-color: #fff #555 #555 #fff;
-  box-shadow: 
+  box-shadow:
     0px 0px 15px rgba(var(--neon-color), 0.25),
-    inset 1.5px 1.5px 0px #ffffff, 
+    inset 1.5px 1.5px 0px #ffffff,
     inset -1.5px -1.5px 0px #888888,
     4px 4px 0px rgba(0, 0, 0, 0.15);
   margin-bottom: 30px;
@@ -84,9 +127,9 @@
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 
   &:hover {
-    box-shadow: 
+    box-shadow:
       0px 0px 25px var(--neon-color),
-      inset 1.5px 1.5px 0px #ffffff, 
+      inset 1.5px 1.5px 0px #ffffff,
       inset -1.5px -1.5px 0px #888888,
       4px 4px 0px rgba(0, 0, 0, 0.3);
   }
@@ -111,12 +154,12 @@
       gap: 6px;
       font-size: 13px;
       letter-spacing: 0.5px;
-      
+
       .y2k-window-icon {
         font-size: 14px;
         filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.5));
       }
-      
+
       .y2k-window-title-text {
         font-family: "Pixelify Sans", Courier, monospace;
       }
@@ -161,35 +204,56 @@
 
 // Hero Window Styling
 .gallery-hero {
-  max-width: 900px;
+  width: 100%;
+  max-width: 1600px;
   margin: 0 auto 60px auto;
   position: relative;
   z-index: 5;
 
   .hero-window {
     --neon-color: #57E2EC;
-    
+
     .hero-body {
-      padding: 30px;
+      padding: 0px;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
       gap: 15px;
       border: 2px inset #fff;
       background: var(--white-4);
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+
+    .hero-image-wrapper {
+      width: 100%;
+      max-width: 600px;
+      margin: 0px;
+    }
+
+    .hero-content-wrapper {
+      width: 100%;
+      max-width: 600px;
+      margin: 10px auto 15px auto;
+      gap: 20px;
+      display: flex;
+      flex-direction: column;
     }
   }
 
   .neon-marquee {
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: clamp(2rem, 4vw, 4rem);
     text-transform: uppercase;
-    color: var(--black);
-    text-shadow: 
+    color: var(--electric-indigo);
+    text-shadow:
       0 0 5px rgba($light-blue, 0.4),
       0 0 10px rgba($electric-indigo, 0.2);
     letter-spacing: 2px;
     text-align: center;
     margin: 0;
+    word-break: break-word;
   }
 
   .hero-subtitle {
@@ -219,7 +283,7 @@
       border-radius: 50%;
       background-color: #00ff00;
       box-shadow: 0 0 6px #00ff00;
-      
+
       &.blinking {
         animation: blink 1.2s infinite steps(1);
       }
@@ -234,7 +298,7 @@
 
 // Main Flow & Categorization
 .gallery-content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 5;
@@ -252,7 +316,7 @@
 
     .category-icon {
       font-size: 24px;
-      filter: drop-shadow(1px 1px 0px rgba(0,0,0,0.2));
+      filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.2));
     }
 
     h2 {
@@ -266,23 +330,28 @@
     .category-line {
       flex: 1;
       height: 6px;
-      background: repeating-linear-gradient(
-        45deg,
-        var(--black-2),
-        var(--black-2) 4px,
-        transparent 4px,
-        transparent 8px
-      );
+      background: repeating-linear-gradient(45deg,
+          var(--black-2),
+          var(--black-2) 4px,
+          transparent 4px,
+          transparent 8px);
       opacity: 0.3;
     }
   }
 }
 
 .artwork-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  width: 100%;
+  justify-items: center;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 30px;
+    align-items: start;
+  }
 }
 
 // Artwork Cards
@@ -295,58 +364,13 @@
     padding: 8px;
   }
 
-  // Image Frame viewport
-  .y2k-image-wrapper {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    background-color: #000;
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 20px 20px;
-    border: 3px inset #555;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: opacity 0.5s ease;
-      opacity: 1; // Default fallback visible
-    }
-
-    .y2k-image-loader {
-      position: absolute;
-      font-size: 0.75rem;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-
-      .loader-spinner {
-        display: inline-block;
-        width: 12px;
-        height: 12px;
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        border-top-color: #fff;
-        border-radius: 50%;
-        animation: spin 0.8s linear infinite;
-      }
-    }
-  }
-
   // Description Card below Image
   .y2k-description-container {
     margin-top: 15px;
     padding: 12px;
     background-color: var(--white-4);
     border: 2px inset #999;
-    box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05);
+    box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.05);
 
     .y2k-meta-info {
       display: flex;
@@ -441,6 +465,10 @@
   font-family: "Pixelify Sans", "MS Sans Serif", Arial, sans-serif !important;
 }
 
+.font-lexend {
+  font-family: "Lexend", sans-serif;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -448,6 +476,13 @@
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
