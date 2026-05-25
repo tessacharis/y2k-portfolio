@@ -17,6 +17,21 @@ Tessa is a **Senior UI/UX Designer & Front-End Developer** with 10+ years of exp
 
 ---
 
+## 🎨 Interactive Art Gallery
+
+The portfolio includes an immersive, interactive **Y2K retro-themed Art Gallery** (`/gallery` route) that showcases digital artwork inside simulated OS browser window frames. Key features:
+- **WebGL Transition Shader**: Displays a custom pixel-reveal loading shader transition for all artwork, utilizing custom brand colors (neon pink, neon green, electric indigo, and cyan).
+- **ScrollTrigger Animation**: Powered by GSAP and ScrollTrigger, mapping DOM scroll positions and container bounding client rectangles directly to Three.js plane meshes.
+- **Dynamic Window Frames**: Custom beveled retro windows with glowing neon shadows and dynamic aspect ratios matched to each artwork's metadata.
+- **Vibrant Color Grading**: Leverages Three.js color management and sRGB output encoding manually inside custom fragment shaders.
+
+### 💡 Inspiration & Technical References
+The WebGL-revealed scroll gallery was built using:
+- **Inspiration Codebase**: [gsap-threejs-codrops](https://github.com/J0SUKE/gsap-threejs-codrops)
+- **Tutorial & Technical Breakdown**: [Building a Scroll-Revealed WebGL Gallery with GSAP, Three.js, Astro and Barba.js](https://tympanus.net/codrops/2026/02/02/building-a-scroll-revealed-webgl-gallery-with-gsap-three-js-astro-and-barba-js/)
+
+---
+
 ## 🛠️ Local Development & Scripts
 
 This repository is split into two main parts:
@@ -99,7 +114,7 @@ For authors and content administrators:
    - Log in using your registered Sanity account (Google, GitHub, or email/password).
 
 2. **Cloud Deployed Studio**:
-   - Access the deployed Studio URL (e.g. `https://portfolio-studio.sanity.studio` or your custom domain, configured after running `npm run deploy`).
+   - Access the deployed Studio URL (e.g. `https://tessanewbacher-blog.sanity.studio/` or your custom domain, configured after running `npm run deploy`).
    - Log in with your credentials.
 
 3. **Managing Team Access**:
