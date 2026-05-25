@@ -486,3 +486,79 @@
     opacity: 0;
   }
 }
+
+// Floating Retro Music Player
+.music-player-window {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 400px;
+  z-index: 900; // below site header (999+), above content
+  margin-bottom: 0 !important;
+  box-shadow: 0 0 15px rgba(87, 226, 236, 0.3);
+
+  &.collapsed {
+    width: 180px;
+
+    .player-body {
+      display: none;
+    }
+  }
+
+  .player-body {
+    padding: 6px;
+    background-color: #c0c0c0;
+    border: 2px inset #fff;
+
+    iframe {
+      display: block;
+      border-radius: 0;
+    }
+  }
+}
+
+// Restore Button when closed
+.music-player-restore-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--gray);
+  border: 3px solid #fff;
+  border-color: #fff #555 #555 #fff;
+  box-shadow:
+    0 0 10px rgba(87, 226, 236, 0.4),
+    2px 2px 5px rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 900;
+  outline: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow:
+      0 0 15px rgba(87, 226, 236, 0.6),
+      2px 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  &:active {
+    border-color: #555 #fff #fff #555;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--electric-indigo);
+    outline-offset: 2px;
+  }
+}
+
+// Keyboard focus styles for window control buttons
+.y2k-window-controls button:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 1px;
+}

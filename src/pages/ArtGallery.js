@@ -81,7 +81,7 @@ const ARTWORK = [
     src: artSophie,
     themeColor: "#57E2EC", // Light Blue/Cyan
     description: "In loving memory of my dog Sophie, the sweetest pitbull I've ever met. She always stayed within the boundaries of the yard, even without a fence and loved wearing a fresh bandana.",
-    resolution: "6000x6000",
+    resolution: "1000x1000",
   },
   // 2. Pirate Night (Second)
   {
@@ -245,6 +245,8 @@ export default function ArtGallery() {
   const imageRefs = useRef([]);
   const [webglReady, setWebglReady] = useState(false);
   const [webglSupported, setWebGLSupported] = useState(true);
+  const [playerCollapsed, setPlayerCollapsed] = useState(false);
+  const [playerVisible, setPlayerVisible] = useState(true);
 
   // Keep track of ThreeJS objects for cleanup
   const sceneRef = useRef(null);
@@ -619,6 +621,62 @@ export default function ArtGallery() {
           </section>
         ))}
       </main>
+
+      {/* Floating Retro Music Player */}
+      {playerVisible ? (
+        <div
+          className={`y2k-window music-player-window ${playerCollapsed ? "collapsed" : ""}`}
+          style={{ "--neon-color": "#57E2EC" }}
+        >
+          <div className="y2k-window-header">
+            <div className="y2k-window-title">
+              <span className="y2k-window-icon">🔊</span>
+              <span className="y2k-window-title-text">AMBIENCE.EXE</span>
+            </div>
+            <div className="y2k-window-controls">
+              <button
+                className="y2k-btn-min"
+                onClick={() => setPlayerCollapsed(!playerCollapsed)}
+                aria-label={playerCollapsed ? "Expand music player" : "Minimize music player"}
+                aria-expanded={!playerCollapsed}
+              >
+                {playerCollapsed ? "[]" : "_"}
+              </button>
+              <button
+                className="y2k-btn-close"
+                onClick={() => setPlayerVisible(false)}
+                aria-label="Close music player"
+              >
+                X
+              </button>
+            </div>
+          </div>
+          <div className="y2k-window-body player-body">
+            <iframe
+              src="https://open.spotify.com/embed/track/4Nk7Mof1w4q2vk160DYEoc?utm_source=generator&theme=0"
+              width="100%"
+              height="80"
+              frameBorder="0"
+              allowFullScreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="Spotify Music Player playing Aquatic Ambience by Scizzie"
+            />
+          </div>
+        </div>
+      ) : (
+        <button
+          className="music-player-restore-btn"
+          onClick={() => {
+            setPlayerVisible(true);
+            setPlayerCollapsed(false);
+          }}
+          aria-label="Open music player"
+          title="Open music player"
+        >
+          🎵
+        </button>
+      )}
     </div>
   );
 }
