@@ -17,6 +17,7 @@ import ThankYouPayment from "./pages/ThankYouPayment.js";
 import Privacy from "./pages/Privacy.js";
 import BlogList from "./pages/blog/BlogList.js";
 import BlogDetails from "./pages/blog/BlogDetails.js";
+import ArtGallery from "./pages/ArtGallery.js";
 import "./styles/app.scss";
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/gallery" element={<ArtGallery />} />
           <Route path="/work" element={<Work />} />
           <Route path="/work/mentorcliq" element={<MentorcliQ />} />
           <Route path="/work/wia-dcc" element={<WIADCC />} />

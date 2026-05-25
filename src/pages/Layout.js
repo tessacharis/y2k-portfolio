@@ -100,6 +100,9 @@ const Layout = () => {
             <li>
               <a href="/help" onClick={() => setShowMenu(!showMenu)}>Help</a>
             </li>
+            <li>
+              <a href="/gallery" onClick={() => setShowMenu(!showMenu)}>Art Gallery</a>
+            </li>
             <li className="dropdown">
               {/* <!-- aria-expanded needs managed with Javascript --> */}
               <button
@@ -179,6 +182,9 @@ const Layout = () => {
             </li>
             <li>
               <a href="mailto:tessacharis@gmail.com">Email</a>
+            </li>
+            <li>
+              <Link to="/gallery">Gallery</Link>
             </li>
             <li>
               <Link to="/help">Contact Me</Link>
