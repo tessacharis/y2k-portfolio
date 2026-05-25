@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO.js";
 import "../styles/work.scss";
 import MentorcliQ1 from "../assets/mentorcliq-design-system.webp";
 import WIA from "../assets/WIA-DCC-Website.png";
@@ -11,6 +12,10 @@ import AlignAI from "../assets/alignai-screenshots.png";
 const Work = () => {
   return (
     <section aria-labelledby="portfolio-heading" style={{ textAlign: "center", padding: "40px 20px" }}>
+      <SEO
+        title="Product Design Case Studies | Tessa Newbacher"
+        description="Explore product design case studies, wireframes, and design system engineering projects by Tessa Newbacher."
+      />
       <h1 id="portfolio-heading" style={{ textAlign: "center", marginBottom: "60px" }}>
         Work
       </h1>

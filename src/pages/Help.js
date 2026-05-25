@@ -1,6 +1,12 @@
+import SEO from "../components/SEO.js";
+
 const Help = () => {
   return (
     <section className="portfolio-item" aria-labelledby="help-heading">
+      <SEO
+        title="Book a Product & Design Consultation | Tessa Newbacher"
+        description="Need help with UI/UX design, React front-end development, or design system strategy? Book a direct consultation session with Tessa Newbacher."
+      />
       <div className="window-content">
         <div className="window-content-container">
           <h2 id="help-heading">Are you looking for an extra hand?</h2>

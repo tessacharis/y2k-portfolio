@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import ReactGA from "react-ga4";
+import SEO from "../components/SEO.js";
 
 const Privacy = () => {
     useEffect(() => {
@@ -8,6 +9,10 @@ const Privacy = () => {
 
     return (
         <div className="window-container" style={{ maxWidth: "800px", margin: "100px auto" }}>
+            <SEO
+                title="Privacy Policy | Tessa Newbacher"
+                description="Privacy policy and data handling terms for Tessa Newbacher's retro portfolio and blog."
+            />
             <div className="window-content" style={{ padding: "40px" }}>
                 <h1>Privacy Policy</h1>
                 <br />

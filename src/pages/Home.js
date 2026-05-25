@@ -9,6 +9,7 @@ import { PortableText } from "@portabletext/react";
 import headshot from "../assets/tessa-newbacher-headshot-2026-y2k.png";
 import hello from "../assets/hello.png";
 import { RetroLoader } from "../components/RetroLoader.js";
+import SEO from "../components/SEO.js";
 import "../styles/home.scss";
 import "../styles/draggable.scss";
 
@@ -108,6 +109,10 @@ const Home = () => {
 
   return (
     <div className="home-page-content" ref={container}>
+      <SEO
+        title="Tessa Newbacher | Senior UI/UX Designer & Front-End Developer"
+        description="Hi, I'm Tessa Newbacher — a senior UI/UX designer, front-end developer, and product strategist with 10+ years of experience. Specializing in high-fidelity Y2K retro experiences and design systems."
+      />
       <section aria-label="hero-title" className="hero">
         <div class="hero-content-container">
           <h1 id="hero-title" className="glitch-title" data-text="From Idea to Production">

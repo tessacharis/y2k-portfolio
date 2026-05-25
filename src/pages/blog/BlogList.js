@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { client, urlFor } from "../../sanityClient";
 import { PortableText } from "@portabletext/react";
 import { RetroLoader } from "../../components/RetroLoader.js";
+import SEO from "../../components/SEO.js";
 import "../../styles/blog-list.scss";
 
 const BlogList = () => {
@@ -34,6 +35,10 @@ const BlogList = () => {
   return (
 
     <section aria-labelledby="blog-heading" className="blog-list-section">
+      <SEO
+        title="Blog & Resources | Tessa Newbacher"
+        description="Discover design system guides, UI/UX tutorials, product strategy insights, and free downloads on Tessa Newbacher's blog."
+      />
       <h1 id="blog-heading" className="blog-list-title">
         Blog & Resources
       </h1>

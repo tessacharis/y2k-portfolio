@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO.js";
 import nopage from "../assets/nopage.png";
 import GlitchBackground from "../components/GlitchBackground";
 
 const NoPage = () => {
   return (
     <section style={{ position: "relative", minHeight: "100vh", maxWidth: "none" }}>
+      <SEO
+        title="404: System Error - Page Not Found"
+        description="The requested page could not be found. Return to desktop."
+      />
       <GlitchBackground />
       <div className="window-content">
         <div className="window-content-container" style={{ margin: "20px auto", textAlign: "center" }}>

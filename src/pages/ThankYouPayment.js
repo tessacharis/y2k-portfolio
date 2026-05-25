@@ -1,9 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO.js";
 
 const ThankYou = () => {
   return (
     <section>
+      <SEO
+        title="Payment Successful | Tessa Newbacher"
+        description="Thank you for your payment! It was a pleasure working with you."
+      />
       <div className="window-content" style={{ margin: "100px auto" }}>
         <div className="window-content-container">
           <h1>

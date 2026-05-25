@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../styles/work.scss";
+import SEO from "../components/SEO.js";
 import MentorcliQ1 from "../assets/mentorcliq-design-system.webp";
 import MentorcliQ2 from "../assets/mentorcliq-design-system2.webp";
 import MentorcliQ3 from "../assets/mentorcliq-screenshots.png";
@@ -8,6 +9,10 @@ import Pres from "../assets/cliq-fest-ds-presentation-armenia.jpg";
 const MentorcliQ = () => {
   return (
     <section className="portfolio-item" aria-labelledby="portfolio-heading">
+      <SEO
+        title="MentorcliQ B2B SaaS Case Study | Tessa Newbacher"
+        description="Case study detailing product design, UX/UI, and front-end engineering for MentorcliQ mentoring software, contributing to 4x revenue growth."
+      />
       <div className="window-content">
         <div className="window-content-container">
           <Link to="/work" className="back-button">

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO.js";
 import "../styles/work.scss";
 import UHM from "../assets/uhm-brand-websites-mockup.png";
 import Pres from "../assets/uhm-presentation-image.png";
@@ -7,6 +8,10 @@ import Pres from "../assets/uhm-presentation-image.png";
 const WIADCC = () => {
   return (
     <section className="portfolio-item" aria-labelledby="portfolio-heading">
+      <SEO
+        title="Union Home Mortgage Fintech Case Study | Tessa Newbacher"
+        description="Case study detailing building design systems, digital marketing engineering, and operational automation apps at Union Home Mortgage by Tessa Newbacher."
+      />
       <div className="window-content">
         <div className="window-content-container">
           <Link to="/work" className="back-button">

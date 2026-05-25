@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as THREE from "three";
+import SEO from "../components/SEO.js";
 
 // Asset Imports
 import artBeau from "../assets/art-gallery/Pets - Beau.png";
@@ -486,6 +487,10 @@ export default function ArtGallery() {
       ref={containerRef}
       className={`art-gallery-page ${webglReady && webglSupported ? "webgl-active" : ""}`}
     >
+      <SEO
+        title="Interactive Y2K Art Gallery | Tessa Newbacher"
+        description="Explore digital illustrations, sketches, and pets portraits by Tessa Newbacher, rendered in a custom Y2K retro OS environment with WebGL pixel reveal shaders."
+      />
       {/* ThreeJS Overlay Canvas */}
       {webglSupported && (
         <canvas ref={canvasRef} id="gallery-webgl" className="gallery-webgl" />

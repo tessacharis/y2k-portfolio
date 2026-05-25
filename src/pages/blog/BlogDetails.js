@@ -3,7 +3,19 @@ import { Link, useParams } from "react-router-dom";
 import { client, urlFor } from "../../sanityClient";
 import { PortableText } from "@portabletext/react";
 import { RetroLoader } from "../../components/RetroLoader.js";
+import SEO from "../../components/SEO.js";
 import "../../styles/blog.scss";
+
+const getPlainTextFromPortableText = (blocks) => {
+  if (!blocks || !Array.isArray(blocks)) return "";
+  return blocks
+    .map((block) => {
+      if (block._type !== "block" || !block.children) return "";
+      return block.children.map((child) => child.text).join("");
+    })
+    .filter(Boolean)
+    .join(" ");
+};
 
 const HtmlEmbed = ({ html }) => {
   const containerRef = useRef(null);
@@ -53,8 +65,17 @@ const BlogDetails = () => {
 
   if (!singleBlogPost) return <RetroLoader message="Downloading Post..." />;
 
+  const plainTextSummary = getPlainTextFromPortableText(singleBlogPost.summary);
+  const resolvedOgImage = singleBlogPost.image ? urlFor(singleBlogPost.image).url() : undefined;
+
   return (
     <section className="blog-item" aria-labelledby="blog-heading">
+      <SEO
+        title={`${singleBlogPost.headline} | Tessa Newbacher's Blog`}
+        description={plainTextSummary || "Read the latest article on Tessa Newbacher's retro blog."}
+        ogImage={resolvedOgImage}
+        ogType="article"
+      />
       <div className="window-content">
         <div className="window-content-container">
           <Link to="/blog" className="back-button">

@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import headshot from "../assets/tessa-newbacher-headshot-2026-y2k.png";
 import hello from "../assets/hello.png";
+import SEO from "../components/SEO.js";
 import "../styles/home.scss"; // Reuse homepage styles for consistent layout logic
 import "../styles/about.scss";
 
@@ -22,7 +23,10 @@ const About = () => {
 
   return (
     <div className="home-page-content about-page-content" ref={container}>
-
+      <SEO
+        title="About Tessa Newbacher | Senior UI/UX Designer & Developer"
+        description="Learn about Tessa Newbacher's 10+ years of experience living at the intersection of digital design and computer science, her work history at MentorcliQ and Union Home Mortgage, and her product design philosophy."
+      />
       <section aria-label="hero-title" className="hero hero-about">
         <div className="hero-content-container">
           <h1 id="hero-title" className="glitch-title" data-text="Hi, I'm Tessa!">

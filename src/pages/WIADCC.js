@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO.js";
 import "../styles/work.scss";
 import WIA from "../assets/WIA-DCC-Website.png";
 
 const WIADCC = () => {
   return (
     <section className="portfolio-item" aria-labelledby="portfolio-heading">
+      <SEO
+        title="Women in Analytics & Data Connect Conference Design & Strategy Case Study | Tessa Newbacher"
+        description="Case study detailing visual design, information architecture, and Webflow development for Women in Analytics and DataConnect Conference websites."
+      />
       <div className="window-content">
         <div className="window-content-container">
           <Link to="/work" className="back-button">
