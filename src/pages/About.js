@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import headshot from "../assets/tessa-newbacher-headshot.jpg";
+import headshot from "../assets/tessa-newbacher-headshot-2026-y2k.png";
 import hello from "../assets/hello.png";
 import "../styles/home.scss"; // Reuse homepage styles for consistent layout logic
 import "../styles/about.scss";

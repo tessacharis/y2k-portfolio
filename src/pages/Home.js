@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 import ReactGA from "react-ga4";
 import { client, urlFor } from "../sanityClient";
 import { PortableText } from "@portabletext/react";
-import headshot from "../assets/tessa-newbacher-headshot.jpg";
+import headshot from "../assets/tessa-newbacher-headshot-2026-y2k.png";
 import hello from "../assets/hello.png";
 import { RetroLoader } from "../components/RetroLoader.js";
 import "../styles/home.scss";
